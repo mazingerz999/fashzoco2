@@ -15,7 +15,7 @@ class CreateCategoriasTable extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->enum('tipo', ['Calzado', 'Camiseta', 'Camisa', 'Traje', 'Complemento', 'Pantalon', 'Vestido', 'Ropa Interior', 'Cazadora', 'Traje de Banio']);
+            $table->string('nombrecategoria');
             $table->timestamps();
         });
     }
