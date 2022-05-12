@@ -1,26 +1,26 @@
-<!-- ========== App Menu ========== -->
-<div class="app-menu navbar-menu">
+<div class="app-menu navbar-menu pt-5">
     <!-- LOGO -->
     <div class="navbar-brand-box">
         <!-- Dark Logo-->
-        <a href="index" class="logo logo-dark">
+        <a href="index.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                <img src="assets/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="17">
+                <img src="assets/images/logo-dark.png" alt="" height="17">
             </span>
         </a>
         <!-- Light Logo-->
-        <a href="index" class="logo logo-light">
+        <a href="index.html" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ URL::asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                <img src="assets/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="17">
+                <img src="assets/images/logo-light.png" alt="" height="17">
             </span>
         </a>
-        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+            id="vertical-hover">
             <i class="ri-record-circle-line"></i>
         </button>
     </div>
@@ -31,202 +31,266 @@
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav">
-                <li class="menu-title"><span >@lang('translation.menu')</span></li>
+                <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span >@lang('translation.dashboards')</span>
+                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
+                        role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                        <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="dashboard-analytics" class="nav-link" >@lang('translation.analytics')</a>
+                                <a href="dashboard-analytics.html" class="nav-link"
+                                    data-key="t-analytics"> Analytics
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="dashboard-crm" class="nav-link" >@lang('translation.crm')</a>
+                                <a href="dashboard-crm.html" class="nav-link" data-key="t-crm"> CRM </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index" class="nav-link" >@lang('translation.ecommerce')</a>
+                                <a href="index.html" class="nav-link" data-key="t-ecommerce"> Ecommerce
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="dashboard-crypto" class="nav-link" >@lang('translation.crypto')</a>
+                                <a href="dashboard-crypto.html" class="nav-link" data-key="t-crypto">
+                                    Crypto </a>
                             </li>
                             <li class="nav-item">
-                                <a href="dashboard-projects" class="nav-link" >@lang('translation.projects')</a>
+                                <a href="dashboard-projects.html" class="nav-link" data-key="t-projects">
+                                    Projects </a>
                             </li>
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
-
-
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"
-                        role="button" aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-apps-2-line"></i> <span >@lang('translation.apps')</span>
+                    <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarApps">
+                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Apps</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarApps">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="apps-calendar" class="nav-link" >@lang('translation.calendar')</a>
+                                <a href="apps-calendar.html" class="nav-link" data-key="t-calendar">
+                                    Calendar </a>
                             </li>
                             <li class="nav-item">
-                                <a href="apps-chat" class="nav-link" >@lang('translation.chat')</a>
+                                <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
                             </li>
                             <li class="nav-item">
-                                <a href="apps-mailbox" class="nav-link" >@lang('translation.mailbox')</a>
+                                <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox">
+                                    Mailbox </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarEcommerce" >@lang('translation.ecommerce')
+                                <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarEcommerce"
+                                    data-key="t-ecommerce">
+                                    Ecommerce
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarEcommerce">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-products" class="nav-link" >@lang('translation.products')</a>
+                                            <a href="apps-ecommerce-products.html" class="nav-link"
+                                                data-key="t-products"> Products </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-product-details" class="nav-link" >@lang('translation.product-Details')</a>
+                                            <a href="apps-ecommerce-product-details.html"
+                                                class="nav-link" data-key="t-product-Details"> Product
+                                                Details </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-add-product" class="nav-link" >@lang('translation.create-product')</a>
+                                            <a href="apps-ecommerce-add-product.html" class="nav-link"
+                                                data-key="t-create-product"> Create Product </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-orders" class="nav-link" >@lang('translation.orders')</a>
+                                            <a href="apps-ecommerce-orders.html" class="nav-link"
+                                                data-key="t-orders">
+                                                Orders </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-order-details" class="nav-link" >@lang('translation.order-details')</a>
+                                            <a href="apps-ecommerce-order-details.html" class="nav-link"
+                                                data-key="t-order-details"> Order Details </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-customers" class="nav-link" >@lang('translation.customers')</a>
+                                            <a href="apps-ecommerce-customers.html" class="nav-link"
+                                                data-key="t-customers"> Customers </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-cart" class="nav-link" >@lang('translation.shopping-cart')</a>
+                                            <a href="apps-ecommerce-cart.html" class="nav-link"
+                                                data-key="t-shopping-cart"> Shopping Cart </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-checkout" class="nav-link" >@lang('translation.checkout')</a>
+                                            <a href="apps-ecommerce-checkout.html" class="nav-link"
+                                                data-key="t-checkout"> Checkout </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-sellers" class="nav-link" >@lang('translation.sellers')</a>
+                                            <a href="apps-ecommerce-sellers.html" class="nav-link"
+                                                data-key="t-sellers">
+                                                Sellers </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-seller-details" class="nav-link" >@lang('translation.sellers-details')</a>
+                                            <a href="apps-ecommerce-seller-details.html" class="nav-link"
+                                                data-key="t-sellers-details"> Seller Details </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarProjects" >@lang('translation.projects')
+                                <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProjects"
+                                    data-key="t-projects">
+                                    Projects
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProjects">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-projects-list" class="nav-link" >@lang('translation.list')</a>
+                                            <a href="apps-projects-list.html" class="nav-link"
+                                                data-key="t-list"> List
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-projects-overview" class="nav-link" >@lang('translation.overview')</a>
+                                            <a href="apps-projects-overview.html" class="nav-link"
+                                                data-key="t-overview"> Overview </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-projects-create" class="nav-link" >@lang('translation.create-project')</a>
+                                            <a href="apps-projects-create.html" class="nav-link"
+                                                data-key="t-create-project"> Create Project </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarTasks" >@lang('translation.tasks')
+                                <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarTasks"
+                                    data-key="t-tasks"> Tasks
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarTasks">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-tasks-kanban" class="nav-link" >@lang('translation.kanbanboard')</a>
+                                            <a href="apps-tasks-kanban.html" class="nav-link"
+                                                data-key="t-kanbanboard">
+                                                Kanban Board </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-tasks-list-view" class="nav-link" >@lang('translation.list-view')</a>
+                                            <a href="apps-tasks-list-view.html" class="nav-link"
+                                                data-key="t-list-view">
+                                                List View </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-tasks-details" class="nav-link" >@lang('translation.task-details')</a>
+                                            <a href="apps-tasks-details.html" class="nav-link"
+                                                data-key="t-task-details"> Task Details </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarCRM" >@lang('translation.crm')
+                                <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarCRM"
+                                    data-key="t-crm"> CRM
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarCRM">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-crm-contacts" class="nav-link" >@lang('translation.contacts')</a>
+                                            <a href="apps-crm-contacts.html" class="nav-link"
+                                                data-key="t-contacts">
+                                                Contacts </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crm-companies" class="nav-link" >@lang('translation.companies')</a>
+                                            <a href="apps-crm-companies.html" class="nav-link"
+                                                data-key="t-companies">
+                                                Companies </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crm-deals" class="nav-link" >@lang('translation.deals')</a>
+                                            <a href="apps-crm-deals.html" class="nav-link"
+                                                data-key="t-deals"> Deals
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crm-leads" class="nav-link" >@lang('translation.leads')</a>
+                                            <a href="apps-crm-leads.html" class="nav-link"
+                                                data-key="t-leads"> Leads
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarCrypto" >@lang('translation.crypto')
+                                <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarCrypto"
+                                    data-key="t-crypto"> Crypto
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarCrypto">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-crypto-transactions" class="nav-link" >@lang('translation.transactions')</a>
+                                            <a href="apps-crypto-transactions.html" class="nav-link"
+                                                data-key="t-transactions"> Transactions </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crypto-buy-sell" class="nav-link" >@lang('translation.buy-sell')</a>
+                                            <a href="apps-crypto-buy-sell.html" class="nav-link"
+                                                data-key="t-buy-sell">
+                                                Buy & Sell </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crypto-orders" class="nav-link" >@lang('translation.orders')</a>
+                                            <a href="apps-crypto-orders.html" class="nav-link"
+                                                data-key="t-orders">
+                                                Orders </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crypto-wallet" class="nav-link" >@lang('translation.my-wallet')</a>
+                                            <a href="apps-crypto-wallet.html" class="nav-link"
+                                                data-key="t-my-wallet">
+                                                My Wallet </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crypto-ico" class="nav-link" >@lang('translation.ico-list')</a>
+                                            <a href="apps-crypto-ico.html" class="nav-link"
+                                                data-key="t-ico-list"> ICO
+                                                List </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-crypto-kyc" class="nav-link" >@lang('translation.kyc-application')</a>
+                                            <a href="apps-crypto-kyc.html" class="nav-link"
+                                                data-key="t-kyc-application"> KYC Application </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarInvoices" >@lang('translation.invoices')
+                                <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarInvoices"
+                                    data-key="t-invoices">
+                                    Invoices
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarInvoices">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-invoices-list" class="nav-link" >@lang('translation.list-view')</a>
+                                            <a href="apps-invoices-list.html" class="nav-link"
+                                                data-key="t-list-view">
+                                                List View </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-invoices-details" class="nav-link" >@lang('translation.details')</a>
+                                            <a href="apps-invoices-details.html" class="nav-link"
+                                                data-key="t-details">
+                                                Details </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-invoices-create" class="nav-link" >@lang('translation.create-invoice')</a>
+                                            <a href="apps-invoices-create.html" class="nav-link"
+                                                data-key="t-create-invoice"> Create Invoice </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarTickets" >@lang('translation.supprt-tickets')
+                                <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarTickets"
+                                    data-key="t-supprt-tickets">
+                                    Support Tickets
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarTickets">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-tickets-list" class="nav-link" >@lang('translation.list-view')</a>
+                                            <a href="apps-tickets-list.html" class="nav-link"
+                                                data-key="t-list-view">
+                                                List View </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="apps-tickets-details" class="nav-link" >@lang('translation.ticket-details')</a>
+                                            <a href="apps-tickets-details.html" class="nav-link"
+                                                data-key="t-ticket-details"> Ticket Details </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -236,167 +300,213 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarLayouts">
-                        <i class="ri-layout-3-line"></i> <span >@lang('translation.layouts')</span>
+                    <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse"
+                        role="button" aria-expanded="false" aria-controls="sidebarLayouts">
+                        <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarLayouts">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="layouts-horizontal" target="_blank" class="nav-link" >@lang('translation.horizontal')</a>
+                                <a href="layouts-horizontal.html" target="_blank" class="nav-link"
+                                    data-key="t-horizontal">Horizontal</a>
                             </li>
                             <li class="nav-item">
-                                <a href="layouts-detached" target="_blank" class="nav-link" >@lang('translation.detached')</a>
+                                <a href="layouts-detached.html" target="_blank" class="nav-link"
+                                    data-key="t-detached">Detached</a>
                             </li>
                             <li class="nav-item">
-                                <a href="layouts-two-column" target="_blank" class="nav-link" >@lang('translation.two-column')</a>
+                                <a href="layouts-two-column.html" target="_blank" class="nav-link"
+                                    data-key="t-two-column">Two Column</a>
                             </li>
                             <li class="nav-item">
-                                <a href="layouts-vertical-hovered" target="_blank" class="nav-link" >@lang('translation.hovered')</a>
+                                <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link"
+                                    data-key="t-hovered">Hovered</a>
                             </li>
                         </ul>
                     </div>
                 </li> <!-- end Dashboard Menu -->
-                <li class="nav-item">
-                    <a class="nav-link menu-link" target="_blank" href="landing">
-                        <i class="ri-honour-line"></i> <span data-key="t-landing">Landing</span>
-                    </a>
-                </li>
 
-                <li class="menu-title"><i class="ri-more-fill"></i> <span >@lang('translation.pages')</span></li>
+                <li class="menu-title"><i class="ri-more-fill"></i> <span
+                        data-key="t-pages">Pages</span></li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarAuth">
-                        <i class="ri-account-circle-line"></i> <span >@lang('translation.authentication')</span>
+                        <i class="ri-account-circle-line"></i> <span
+                            data-key="t-authentication">Authentication</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarAuth">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarSignIn" >@lang('translation.signin')
+                                <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarSignIn"
+                                    data-key="t-signin"> Sign In
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarSignIn">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-signin-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-signin-basic.html" class="nav-link"
+                                                data-key="t-basic"> Basic
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-signin-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-signin-cover.html" class="nav-link"
+                                                data-key="t-cover"> Cover
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarSignUp" >@lang('translation.signup')
+                                <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarSignUp"
+                                    data-key="t-signup"> Sign Up
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarSignUp">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-signup-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-signup-basic.html" class="nav-link"
+                                                data-key="t-basic"> Basic
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-signup-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-signup-cover.html" class="nav-link"
+                                                data-key="t-cover"> Cover
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarResetPass" >@lang('translation.password-reset')
+                                <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarResetPass"
+                                    data-key="t-password-reset">
+                                    Password Reset
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarResetPass">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-pass-reset-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-pass-reset-basic.html" class="nav-link"
+                                                data-key="t-basic">
+                                                Basic </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-pass-reset-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-pass-reset-cover.html" class="nav-link"
+                                                data-key="t-cover">
+                                                Cover </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#sidebarLockScreen" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarLockScreen" >@lang('translation.lock-screen')
+                                <a href="#sidebarLockScreen" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarLockScreen"
+                                    data-key="t-lock-screen">
+                                    Lock Screen
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarLockScreen">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-lockscreen-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-lockscreen-basic.html" class="nav-link"
+                                                data-key="t-basic">
+                                                Basic </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-lockscreen-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-lockscreen-cover.html" class="nav-link"
+                                                data-key="t-cover">
+                                                Cover </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarLogout" >@lang('translation.logout')
+                                <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarLogout"
+                                    data-key="t-logout"> Logout
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarLogout">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-logout-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-logout-basic.html" class="nav-link"
+                                                data-key="t-basic"> Basic
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-logout-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-logout-cover.html" class="nav-link"
+                                                data-key="t-cover"> Cover
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarSuccessMsg" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarSuccessMsg" >@lang('translation.success-message')
+                                <a href="#sidebarSuccessMsg" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarSuccessMsg"
+                                    data-key="t-success-message"> Success Message
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarSuccessMsg">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-success-msg-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-success-msg-basic.html" class="nav-link"
+                                                data-key="t-basic">
+                                                Basic </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-success-msg-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-success-msg-cover.html" class="nav-link"
+                                                data-key="t-cover">
+                                                Cover </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarTwoStep" >@lang('translation.two-step-verification')
+                                <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarTwoStep"
+                                    data-key="t-two-step-verification"> Two Step Verification
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarTwoStep">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-twostep-basic" class="nav-link" >@lang('translation.basic')</a>
+                                            <a href="auth-twostep-basic.html" class="nav-link"
+                                                data-key="t-basic"> Basic
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-twostep-cover" class="nav-link" >@lang('translation.cover')</a>
+                                            <a href="auth-twostep-cover.html" class="nav-link"
+                                                data-key="t-cover"> Cover
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarErrors" >@lang('translation.errors')
+                                <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarErrors"
+                                    data-key="t-errors"> Errors
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarErrors">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-404-basic" class="nav-link" >@lang('translation.404-basic')</a>
+                                            <a href="auth-404-basic.html" class="nav-link"
+                                                data-key="t-404-basic"> 404
+                                                Basic </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-404-cover" class="nav-link" >@lang('translation.404-cover')</a>
+                                            <a href="auth-404-cover.html" class="nav-link"
+                                                data-key="t-404-cover"> 404
+                                                Cover </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-404-alt" class="nav-link" >@lang('translation.404-alt')</a>
+                                            <a href="auth-404-alt.html" class="nav-link"
+                                                data-key="t-404-alt"> 404 Alt
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="auth-500" class="nav-link" >@lang('translation.500')</a>
+                                            <a href="auth-500.html" class="nav-link" data-key="t-500">
+                                                500 </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -408,146 +518,194 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarPages">
-                        <i class="ri-pages-line"></i> <span >@lang('translation.pages')</span>
+                        <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarPages">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="pages-starter" class="nav-link" >@lang('translation.starter')</a>
+                                <a href="pages-starter.html" class="nav-link" data-key="t-starter">
+                                    Starter </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarProfile" >@lang('translation.profile')
+                                <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"
+                                    data-key="t-profile"> Profile
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="pages-profile" class="nav-link" >@lang('translation.simple-page')</a>
+                                            <a href="pages-profile.html" class="nav-link"
+                                                data-key="t-simple-page">
+                                                Simple Page </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="pages-profile-settings" class="nav-link" >@lang('translation.settings')</a>
+                                            <a href="pages-profile-settings.html" class="nav-link"
+                                                data-key="t-settings"> Settings </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-team" class="nav-link" >@lang('translation.team')</a>
+                                <a href="pages-team.html" class="nav-link" data-key="t-team"> Team </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-timeline" class="nav-link" >@lang('translation.timeline')</a>
+                                <a href="pages-timeline.html" class="nav-link" data-key="t-timeline">
+                                    Timeline </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-faqs" class="nav-link" >@lang('translation.faqs')</a>
+                                <a href="pages-faqs.html" class="nav-link" data-key="t-faqs"> FAQs </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-pricing" class="nav-link" >@lang('translation.pricing')</a>
+                                <a href="pages-pricing.html" class="nav-link" data-key="t-pricing">
+                                    Pricing </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-gallery" class="nav-link" >@lang('translation.gallery')</a>
+                                <a href="pages-gallery.html" class="nav-link" data-key="t-gallery">
+                                    Gallery </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-maintenance" class="nav-link" >@lang('translation.maintenance')</a>
+                                <a href="pages-maintenance.html" class="nav-link"
+                                    data-key="t-maintenance"> Maintenance
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-coming-soon" class="nav-link" >@lang('translation.coming-soon')</a>
+                                <a href="pages-coming-soon.html" class="nav-link"
+                                    data-key="t-coming-soon"> Coming Soon
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-sitemap" class="nav-link" >@lang('translation.sitemap')</a>
+                                <a href="pages-sitemap.html" class="nav-link" data-key="t-sitemap">
+                                    Sitemap </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-search-results" class="nav-link" >@lang('translation.search-results')</a>
+                                <a href="pages-search-results.html" class="nav-link"
+                                    data-key="t-search-results"> Search
+                                    Results </a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="menu-title"><i class="ri-more-fill"></i> <span >@lang('translation.components')</span></li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" target="_blank" href="landing.html">
+                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Landing</span>
+                        <span class="badge badge-pill bg-danger" data-key="t-new">New</span>
+                    </a>
+                </li>
+
+                <li class="menu-title"><i class="ri-more-fill"></i> <span
+                        data-key="t-components">Components</span></li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarUI">
-                        <i class="ri-pencil-ruler-2-line"></i> <span >@lang('translation.base-ui')</span>
+                        <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Base</span>
                     </a>
                     <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
                         <div class="row">
                             <div class="col-lg-4">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="ui-alerts" class="nav-link" >@lang('translation.alerts')</a>
+                                        <a href="ui-alerts.html" class="nav-link"
+                                            data-key="t-alerts">Alerts</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-badges" class="nav-link" >@lang('translation.badges')</a>
+                                        <a href="ui-badges.html" class="nav-link"
+                                            data-key="t-badges">Badges</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-buttons" class="nav-link" >@lang('translation.buttons')</a>
+                                        <a href="ui-buttons.html" class="nav-link"
+                                            data-key="t-buttons">Buttons</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-colors" class="nav-link" >@lang('translation.colors')</a>
+                                        <a href="ui-colors.html" class="nav-link"
+                                            data-key="t-colors">Colors</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-cards" class="nav-link" >@lang('translation.cards')</a>
+                                        <a href="ui-cards.html" class="nav-link"
+                                            data-key="t-cards">Cards</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-carousel" class="nav-link" >@lang('translation.carousel')</a>
+                                        <a href="ui-carousel.html" class="nav-link"
+                                            data-key="t-carousel">Carousel</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-dropdowns" class="nav-link" >@lang('translation.dropdowns')</a>
+                                        <a href="ui-dropdowns.html" class="nav-link"
+                                            data-key="t-dropdowns">Dropdowns</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-grid" class="nav-link" >@lang('translation.grid')</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="ui-images" class="nav-link" >@lang('translation.images')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-tabs" class="nav-link" >@lang('translation.tabs')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-accordions" class="nav-link" >@lang('translation.accordion-collapse')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-modals" class="nav-link" >@lang('translation.modals')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-offcanvas" class="nav-link" >@lang('translation.offcanvas')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-placeholders" class="nav-link" >@lang('translation.placeholders')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-progress" class="nav-link" >@lang('translation.progress')</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-notifications" class="nav-link" >@lang('translation.notifications')</a>
+                                        <a href="ui-grid.html" class="nav-link"
+                                            data-key="t-grid">Grid</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-4">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="ui-media" class="nav-link" >@lang('translation.media-object')</a>
+                                        <a href="ui-images.html" class="nav-link"
+                                            data-key="t-images">Images</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-embed-video" class="nav-link" >@lang('translation.embed-video')</a>
+                                        <a href="ui-tabs.html" class="nav-link"
+                                            data-key="t-tabs">Tabs</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-typography" class="nav-link" >@lang('translation.typography')</a>
+                                        <a href="ui-accordions.html" class="nav-link"
+                                            data-key="t-accordion-collapse">Accordion & Collapse</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-lists" class="nav-link" >@lang('translation.lists')</a>
+                                        <a href="ui-modals.html" class="nav-link"
+                                            data-key="t-modals">Modals</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-general" class="nav-link" >@lang('translation.general')</a>
+                                        <a href="ui-offcanvas.html" class="nav-link"
+                                            data-key="t-offcanvas">Offcanvas</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-ribbons" class="nav-link" >@lang('translation.ribbons')</a>
+                                        <a href="ui-placeholders.html" class="nav-link"
+                                            data-key="t-placeholders">Placeholders</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="ui-utilities" class="nav-link" >@lang('translation.utilities')</a>
+                                        <a href="ui-progress.html" class="nav-link"
+                                            data-key="t-progress">Progress</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-notifications.html" class="nav-link"
+                                            data-key="t-notifications">Notifications</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="ui-media.html" class="nav-link"
+                                            data-key="t-media-object">Media
+                                            object</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-embed-video.html" class="nav-link"
+                                            data-key="t-embed-video">Embed
+                                            Video</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-typography.html" class="nav-link"
+                                            data-key="t-typography">Typography</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-lists.html" class="nav-link"
+                                            data-key="t-lists">Lists</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-general.html" class="nav-link"
+                                            data-key="t-general">General</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-ribbons.html" class="nav-link"
+                                            data-key="t-ribbons">Ribbons</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="ui-utilities.html" class="nav-link"
+                                            data-key="t-utilities">Utilities</a>
                                     </li>
                                 </ul>
                             </div>
@@ -556,289 +714,127 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarAdvanceUI">
-                        <i class="ri-stack-line"></i> <span >@lang('translation.advance-ui')</span>
-                        <span class="badge badge-pill bg-success" >@lang('translation.new')</span>
+                    <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse"
+                        role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
+                        <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Advance</span>
+
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="advance-ui-sweetalerts" class="nav-link" >@lang('translation.sweet-alerts')</a>
+                                <a href="advance-ui-sweetalerts.html" class="nav-link"
+                                    data-key="t-sweet-alerts">Sweet
+                                    Alerts</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-nestable" class="nav-link" >@lang('translation.nestable-list')</a>
+                                <a href="advance-ui-nestable.html" class="nav-link"
+                                    data-key="t-nestable-list">Nestable
+                                    List</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-scrollbar" class="nav-link" >@lang('translation.scrollbar')</a>
+                                <a href="advance-ui-scrollbar.html" class="nav-link"
+                                    data-key="t-scrollbar">Scrollbar</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-animation" class="nav-link" >@lang('translation.animation')</a>
+                                <a href="advance-ui-animation.html" class="nav-link"
+                                    data-key="t-animation">Animation</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-tour" class="nav-link" >@lang('translation.tour')</a>
+                                <a href="advance-ui-tour.html" class="nav-link"
+                                    data-key="t-tour">Tour</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-swiper" class="nav-link" >@lang('translation.swiper-slider')</a>
+                                <a href="advance-ui-swiper.html" class="nav-link"
+                                    data-key="t-swiper-slider">Swiper
+                                    Slider</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-ratings" class="nav-link" >@lang('translation.ratings')</a>
+                                <a href="advance-ui-ratings.html" class="nav-link"
+                                    data-key="t-ratings">Ratings</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-highlight" class="nav-link" >@lang('translation.highlight')</a>
+                                <a href="advance-ui-highlight.html" class="nav-link"
+                                    data-key="t-highlight">Highlight</a>
                             </li>
                             <li class="nav-item">
-                                <a href="advance-ui-scrollspy" class="nav-link" >@lang('translation.scrollSpy')</a>
+                                <a href="advance-ui-scrollspy.html" class="nav-link"
+                                    data-key="t-scrollSpy">ScrollSpy</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="widgets">
-                        <i class="ri-honour-line"></i> <span >@lang('translation.widgets')</span>
+                    <a class="nav-link menu-link" href="widgets.html">
+                        <i class="ri-honour-line"></i> <span data-key="t-widgets">Widgets</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarForms">
-                        <i class="ri-file-list-3-line"></i> <span >@lang('translation.forms')</span>
+                        <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Forms</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarForms">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="forms-elements" class="nav-link" >@lang('translation.basic-elements')</a>
+                                <a href="forms-elements.html" class="nav-link"
+                                    data-key="t-basic-elements">Basic
+                                    Elements</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-select" class="nav-link" >@lang('translation.form-select')</a>
+                                <a href="forms-select.html" class="nav-link" data-key="t-form-select">
+                                    Form Select </a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-checkboxs-radios" class="nav-link" >@lang('translation.checkboxs-radios')</a>
+                                <a href="forms-checkboxs-radios.html" class="nav-link"
+                                    data-key="t-checkboxs-radios">Checkboxs & Radios</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-pickers" class="nav-link" >@lang('translation.pickers')</a>
+                                <a href="forms-pickers.html" class="nav-link" data-key="t-pickers">
+                                    Pickers </a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-masks" class="nav-link" >@lang('translation.input-masks')</a>
+                                <a href="forms-masks.html" class="nav-link"
+                                    data-key="t-input-masks">Input Masks</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-advanced" class="nav-link" >@lang('translation.advanced')</a>
+                                <a href="forms-advanced.html" class="nav-link"
+                                    data-key="t-advanced">Advanced</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-range-sliders" class="nav-link" >@lang('translation.range-slider')</a>
+                                <a href="forms-range-sliders.html" class="nav-link"
+                                    data-key="t-range-slider"> Range
+                                    Slider </a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-validation" class="nav-link" >@lang('translation.validation')</a>
+                                <a href="forms-validation.html" class="nav-link"
+                                    data-key="t-validation">Validation</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-wizard" class="nav-link" >@lang('translation.wizard')</a>
+                                <a href="forms-wizard.html" class="nav-link"
+                                    data-key="t-wizard">Wizard</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-editors" class="nav-link" >@lang('translation.editors')</a>
+                                <a href="forms-editors.html" class="nav-link"
+                                    data-key="t-editors">Editors</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-file-uploads" class="nav-link" >@lang('translation.file-uploads')</a>
+                                <a href="forms-file-uploads.html" class="nav-link"
+                                    data-key="t-file-uploads">File
+                                    Uploads</a>
                             </li>
                             <li class="nav-item">
-                                <a href="forms-layouts" class="nav-link" >@lang('translation.form-layouts')</a>
+                                <a href="forms-layouts.html" class="nav-link"
+                                    data-key="t-form-layouts">Form Layouts</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarTables">
-                        <i class="ri-layout-grid-line"></i> <span >@lang('translation.tables')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarTables">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="tables-basic" class="nav-link" >@lang('translation.basic-tables')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="tables-gridjs" class="nav-link" >@lang('translation.grid-js')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="tables-listjs" class="nav-link" >@lang('translation.list-js')</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarCharts">
-                        <i class="ri-pie-chart-line"></i> <span >@lang('translation.charts')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarCharts">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="#sidebarApexcharts" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarApexcharts" >@lang('translation.apexcharts')
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarApexcharts">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="charts-apex-line" class="nav-link" >@lang('translation.line')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-area" class="nav-link" >@lang('translation.area')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-column" class="nav-link" >@lang('translation.column')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-bar" class="nav-link" >@lang('translation.bar')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-mixed" class="nav-link" >@lang('translation.mixed')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-timeline" class="nav-link" >@lang('translation.timeline')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-candlestick" class="nav-link" >@lang('translation.candlstick')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-boxplot" class="nav-link" >@lang('translation.boxplot')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-bubble" class="nav-link" >@lang('translation.bubble')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-scatter" class="nav-link" >@lang('translation.scatter')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-heatmap" class="nav-link" >@lang('translation.heatmap')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-treemap" class="nav-link" >@lang('translation.treemap')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-pie" class="nav-link" >@lang('translation.pie')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-radialbar" class="nav-link" >@lang('translation.radialbar')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-radar" class="nav-link" >@lang('translation.radar')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="charts-apex-polar" class="nav-link" >@lang('translation.polar-area')</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="charts-chartjs" class="nav-link" >@lang('translation.chartjs')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="charts-echarts" class="nav-link" >@lang('translation.echarts')</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarIcons">
-                        <i class="ri-compasses-2-line"></i> <span >@lang('translation.icons')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarIcons">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="icons-remix" class="nav-link" >@lang('translation.remix')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="icons-boxicons" class="nav-link" >@lang('translation.boxicons')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="icons-materialdesign" class="nav-link" >@lang('translation.material-design')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="icons-lineawesome" class="nav-link" >@lang('translation.line-awesome')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="icons-feather" class="nav-link" >@lang('translation.feather')</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarMaps">
-                        <i class="ri-map-pin-line"></i> <span >@lang('translation.maps')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarMaps">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="maps-google" class="nav-link" data-key="t-google">
-                                    Google
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="maps-vector" class="nav-link" data-key="t-vector">
-                                    Vector
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="maps-leaflet" class="nav-link" data-key="t-leaflet">
-                                    Leaflet
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarMultilevel" data-bs-toggle="collapse"
-                        role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
-                        <i class="ri-share-line"></i> <span >@lang('translation.multi-level')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarMultilevel">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link" >@lang('translation.level-1.1')</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarAccount" class="nav-link" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false" aria-controls="sidebarAccount" >@lang('translation.level-1.2')
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarAccount">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link" >@lang('translation.level-2.1')</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#sidebarCrm" class="nav-link" data-bs-toggle="collapse"
-                                                role="button" aria-expanded="false" aria-controls="sidebarCrm" >@lang('translation.level-2.2')
-                                            </a>
-                                            <div class="collapse menu-dropdown" id="sidebarCrm">
-                                                <ul class="nav nav-sm flex-column">
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link" >@lang('translation.level-3.1')</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a href="#" class="nav-link" >@lang('translation.level-3.2')</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
 
             </ul>
         </div>
         <!-- Sidebar -->
     </div>
 </div>
-<!-- Left Sidebar End -->
-<!-- Vertical Overlay-->
-<div class="vertical-overlay"></div>
