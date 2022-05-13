@@ -1,4 +1,4 @@
-<div class="app-menu navbar-menu pt-5">
+<div class="app-menu navbar-menu " >
     <!-- LOGO -->
     <div class="navbar-brand-box">
         <!-- Dark Logo-->
@@ -30,12 +30,13 @@
 
             <div id="two-column-menu">
             </div>
-            <ul class="navbar-nav" id="navbar-nav">
+            <ul class="navbar-nav" id="navbar-nav" data-aos="zoom-out">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+               <!--ROPA -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
                         role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
+                        <i class="las la-tshirt "></i> <span data-key="t-dashboards">Ropa</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
@@ -61,11 +62,12 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
+                </li>
+                <!--ZAPATOS -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Apps</span>
+                        <i class="las la-shoe-prints "></i> <span data-key="t-apps">Zapatos</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarApps">
                         <ul class="nav nav-sm flex-column">
@@ -298,11 +300,11 @@
                         </ul>
                     </div>
                 </li>
-
+                <!-- COMPLEMENTOS -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse"
                         role="button" aria-expanded="false" aria-controls="sidebarLayouts">
-                        <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Layouts</span>
+                        <i class="bx bx-glasses-alt "></i> <span data-key="t-layouts">Complementos</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarLayouts">
                         <ul class="nav nav-sm flex-column">
@@ -324,16 +326,15 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
-
+                </li>
                 <li class="menu-title"><i class="ri-more-fill"></i> <span
-                        data-key="t-pages">Pages</span></li>
-
+                        data-key="t-pages">Paginas</span></li>
+                 <!--DEPORTE  -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarAuth">
-                        <i class="ri-account-circle-line"></i> <span
-                            data-key="t-authentication">Authentication</span>
+                        <i class=" bx bx-football "></i> <span
+                            data-key="t-authentication">Deporte</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarAuth">
                         <ul class="nav nav-sm flex-column">
@@ -514,11 +515,11 @@
                         </ul>
                     </div>
                 </li>
-
+                <!--STREETWEAR  -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarPages">
-                        <i class="ri-pages-line"></i> <span data-key="t-pages">Pages</span>
+                        <i class="bx bxs-compass "></i> <span data-key="t-pages">Streetwear</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarPages">
                         <ul class="nav nav-sm flex-column">
@@ -585,251 +586,29 @@
                         </ul>
                     </div>
                 </li>
-
+                 <!--TENDENCIAS  -->
                 <li class="nav-item">
                     <a class="nav-link menu-link" target="_blank" href="landing.html">
-                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Landing</span>
+                        <i class=" ri-star-half-s-line "></i> <span data-key="t-landing">Tendencias </span>
                         <span class="badge badge-pill bg-danger" data-key="t-new">New</span>
                     </a>
                 </li>
-
-                <li class="menu-title"><i class="ri-more-fill"></i> <span
-                        data-key="t-components">Components</span></li>
-
+                <!-- MAS -->
+                <!--SOBRE NOSOTROS  -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarUI" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarUI">
-                        <i class="ri-pencil-ruler-2-line"></i> <span data-key="t-base-ui">Base</span>
-                    </a>
-                    <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarUI">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="ui-alerts.html" class="nav-link"
-                                            data-key="t-alerts">Alerts</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-badges.html" class="nav-link"
-                                            data-key="t-badges">Badges</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-buttons.html" class="nav-link"
-                                            data-key="t-buttons">Buttons</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-colors.html" class="nav-link"
-                                            data-key="t-colors">Colors</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-cards.html" class="nav-link"
-                                            data-key="t-cards">Cards</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-carousel.html" class="nav-link"
-                                            data-key="t-carousel">Carousel</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-dropdowns.html" class="nav-link"
-                                            data-key="t-dropdowns">Dropdowns</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-grid.html" class="nav-link"
-                                            data-key="t-grid">Grid</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="ui-images.html" class="nav-link"
-                                            data-key="t-images">Images</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-tabs.html" class="nav-link"
-                                            data-key="t-tabs">Tabs</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-accordions.html" class="nav-link"
-                                            data-key="t-accordion-collapse">Accordion & Collapse</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-modals.html" class="nav-link"
-                                            data-key="t-modals">Modals</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-offcanvas.html" class="nav-link"
-                                            data-key="t-offcanvas">Offcanvas</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-placeholders.html" class="nav-link"
-                                            data-key="t-placeholders">Placeholders</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-progress.html" class="nav-link"
-                                            data-key="t-progress">Progress</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-notifications.html" class="nav-link"
-                                            data-key="t-notifications">Notifications</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-4">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="ui-media.html" class="nav-link"
-                                            data-key="t-media-object">Media
-                                            object</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-embed-video.html" class="nav-link"
-                                            data-key="t-embed-video">Embed
-                                            Video</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-typography.html" class="nav-link"
-                                            data-key="t-typography">Typography</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-lists.html" class="nav-link"
-                                            data-key="t-lists">Lists</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-general.html" class="nav-link"
-                                            data-key="t-general">General</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-ribbons.html" class="nav-link"
-                                            data-key="t-ribbons">Ribbons</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="ui-utilities.html" class="nav-link"
-                                            data-key="t-utilities">Utilities</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarAdvanceUI" data-bs-toggle="collapse"
-                        role="button" aria-expanded="false" aria-controls="sidebarAdvanceUI">
-                        <i class="ri-stack-line"></i> <span data-key="t-advance-ui">Advance</span>
-
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarAdvanceUI">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="advance-ui-sweetalerts.html" class="nav-link"
-                                    data-key="t-sweet-alerts">Sweet
-                                    Alerts</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-nestable.html" class="nav-link"
-                                    data-key="t-nestable-list">Nestable
-                                    List</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-scrollbar.html" class="nav-link"
-                                    data-key="t-scrollbar">Scrollbar</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-animation.html" class="nav-link"
-                                    data-key="t-animation">Animation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-tour.html" class="nav-link"
-                                    data-key="t-tour">Tour</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-swiper.html" class="nav-link"
-                                    data-key="t-swiper-slider">Swiper
-                                    Slider</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-ratings.html" class="nav-link"
-                                    data-key="t-ratings">Ratings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-highlight.html" class="nav-link"
-                                    data-key="t-highlight">Highlight</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="advance-ui-scrollspy.html" class="nav-link"
-                                    data-key="t-scrollSpy">ScrollSpy</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="widgets.html">
-                        <i class="ri-honour-line"></i> <span data-key="t-widgets">Widgets</span>
+                    <a class="nav-link menu-link" target="_blank" href="landing.html">
+                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarForms">
-                        <i class="ri-file-list-3-line"></i> <span data-key="t-forms">Forms</span>
+                    <a class="nav-link menu-link" target="_blank" href="landing.html">
+                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarForms">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="forms-elements.html" class="nav-link"
-                                    data-key="t-basic-elements">Basic
-                                    Elements</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-select.html" class="nav-link" data-key="t-form-select">
-                                    Form Select </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-checkboxs-radios.html" class="nav-link"
-                                    data-key="t-checkboxs-radios">Checkboxs & Radios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-pickers.html" class="nav-link" data-key="t-pickers">
-                                    Pickers </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-masks.html" class="nav-link"
-                                    data-key="t-input-masks">Input Masks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-advanced.html" class="nav-link"
-                                    data-key="t-advanced">Advanced</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-range-sliders.html" class="nav-link"
-                                    data-key="t-range-slider"> Range
-                                    Slider </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-validation.html" class="nav-link"
-                                    data-key="t-validation">Validation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-wizard.html" class="nav-link"
-                                    data-key="t-wizard">Wizard</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-editors.html" class="nav-link"
-                                    data-key="t-editors">Editors</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-file-uploads.html" class="nav-link"
-                                    data-key="t-file-uploads">File
-                                    Uploads</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-layouts.html" class="nav-link"
-                                    data-key="t-form-layouts">Form Layouts</a>
-                            </li>
-                        </ul>
-                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" target="_blank" href="landing.html">
+                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
+                    </a>
                 </li>
 
 

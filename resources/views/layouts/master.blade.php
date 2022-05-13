@@ -18,7 +18,7 @@
     <!-- Begin page -->
     <div id="layout-wrapper">
         @include('layouts.topbar')
-        {{-- @include('layouts.sidebar') --}}
+        @include('layouts.sidebar')
 
         <div class="main-content">
             <div class="page-content">

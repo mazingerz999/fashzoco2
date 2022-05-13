@@ -10,7 +10,7 @@
         <div class="col-xxl-12">
             <div class="d-flex flex-column h-100">
                 <div class="row">
-                    @foreach ($ropaArray as $value)
+                    {{-- @foreach ($ropaArray as $value)
                         <div class="col-md-2">
                             <!-- EMPIEZA CARD -->
                             <div class="card border card-border-dark text-center" data-aos="flip-right">
@@ -36,8 +36,8 @@
                             </div>
                             <!-- FIN CARD -->
                         </div> <!-- end col-->
-                    @endforeach
-
+                    @endforeach --}}
+                    <p>{{dd($ropaArray)}}</p>
                 </div> <!-- end row-->
             </div>
 

@@ -35,7 +35,7 @@ Route::get('/profile', function () {
 })->name('panelUsuario');
 
 //APIS
-//Sacar la ropa json
+//api asos
 Route::get('/ropaASOS', function () {
     // $ropa=Http::get('https://adidas7.p.rapidapi.com/products/reviews/G55366');
     // $ropaArray=$ropa->json();
@@ -69,3 +69,39 @@ if ($err) {
     return view('tienda.asos', compact('ropaArray'));
 }
     })->name('ropaASOS');
+//api buscador
+Route::get('/ropaTaobao', function () {
+
+    $curl = curl_init();
+
+curl_setopt_array($curl, [
+	CURLOPT_URL => "https://taobao-api.p.rapidapi.com/api?q=adidas&api=%3CREQUIRED%3E&page=1",
+	CURLOPT_RETURNTRANSFER => true,
+	CURLOPT_FOLLOWLOCATION => true,
+	CURLOPT_ENCODING => "",
+	CURLOPT_MAXREDIRS => 10,
+	CURLOPT_TIMEOUT => 30,
+	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+	CURLOPT_CUSTOMREQUEST => "GET",
+	CURLOPT_HTTPHEADER => [
+		"X-RapidAPI-Host: taobao-api.p.rapidapi.com",
+		"X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f"
+	],
+]);
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+	echo "cURL Error #:" . $err;
+} else {
+    $todo=json_decode($response);
+    $ropaArray=$todo;
+    return view('tienda.Taobao', compact('ropaArray'));
+}
+})->name('ropaTaobao');
+
+//ruta para el buscador
+Route::get('/buscador', [\App\Http\Controllers\BuscaController::class, 'buscador'] )->name('buscador');
