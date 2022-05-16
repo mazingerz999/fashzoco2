@@ -1,0 +1,52 @@
+[
+	{ 
+		"facetField": "zc1",
+		"values": [
+			"Clothing",
+			"Shoes",
+			"Bags",
+			"Accessories",
+			"Sporting Goods"
+		]
+	},
+	{
+		"facetField": "zc2",
+		"values": [
+			"Swimwear",
+			"Underwear & Intimates"
+		]
+	},
+	{
+		"facetField": "txAttrFacet_Gender",
+		"values": [
+			"Men",
+			"Girls",
+			"Boys",
+			"Women"
+			
+			
+		]
+	},
+{
+		"facetField": "priceFacet",
+		"values": [
+			"$50.00 and Under",
+			"$100.00 and Under",
+			"$200.00 and Under",
+			"$200.00 and Over",
+			
+			
+		]
+	},
+{
+		"facetField": colorFacet
+		"values": [
+			"Blue",
+			"Red",
+			"etc..."
+			
+			
+		]
+	},
+]
+

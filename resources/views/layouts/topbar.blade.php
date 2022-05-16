@@ -24,8 +24,7 @@
                     </a>
                 </div>
 
-                <button type="button"
-                    class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
                     id="topnav-hamburger-icon">
                     <span class="hamburger-icon">
                         <span></span>
@@ -37,8 +36,8 @@
                 <!-- App Search-->
                 <form class="app-search d-none d-md-block">
                     <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="Que buscas?" autocomplete="off"
-                            id="search-options" value="">
+                        <input type="text" class="form-control" placeholder="Que buscas?"
+                            id="busqueda" value="">
                         <span class="mdi mdi-magnify search-widget-icon"></span>
                         <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
                             id="search-close-options"></span>
@@ -46,11 +45,45 @@
 
                 </form>
                 <!-- fin search -->
+                <script>
+                    $( function() {
+                      function log( message ) {
+                        $( "<div>" ).text( message ).prependTo( "#log" );
+                        $( "#log" ).scrollTop( 0 );
+                      }
+
+                      $( "#busqueda" ).autocomplete({
+                        source: function( query, result ) {
+                          $.ajax( {
+                            type: 'post',
+                            url: '{{route("autocompletado")}}',
+                            dataType: "json",
+                            data:
+                             {"_token": "{{ csrf_token() }}",
+                              "busqueda": query['term']},
+                            success: function( data ) {
+
+                              result(data);
+
+                            }
+                          });
+                        },
+                       position:{
+                           my: "2left+0 top+80"
+                       },
+                        select: function( event, ui ) {
+                         window.location=window.location.origin+ "buscador" + generateSlug(ui.item.value);
+
+                          log( "Selected: " + ui.item.value + " aka " + ui.item.id );
+                        }
+                      } );
+                    } );
+                    </script>
+
             </div>
 
             <div class="d-flex align-items-center">
-
-                <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                {{-- <div class="dropdown d-md-none topbar-head-dropdown header-item">
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                         id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
@@ -69,21 +102,20 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="dropdown ms-1 topbar-head-dropdown header-item">
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language"
-                            height="20" class="rounded">
+                        <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20"
+                            class="rounded">
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
-                            data-lang="en" title="English">
-                            <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
+                        <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en"
+                            title="English">
+                            <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
                             <span class="align-middle">English</span>
                         </a>
 
@@ -158,15 +190,13 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/aliexpress.png" alt="Aliexpress" width="40"
-                                            height="40">
+                                        <img src="assets/images/aliexpress.png" alt="Aliexpress" width="40" height="40">
                                         <span>Aliexpress</span>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/alibaba.png" alt="Alibaba" width="40"
-                                            height="40">
+                                        <img src="assets/images/alibaba.png" alt="Alibaba" width="40" height="40">
                                         <span>Alibaba</span>
                                     </a>
                                 </div>
@@ -181,8 +211,7 @@
                             <div class="row g-0">
                                 <div class="col">
                                     <a class="dropdown-icon-item" href="{{ route('ropaASOS') }}">
-                                        <img src="assets/images/zalando.png" alt="Zalando" width="40"
-                                            height="40">
+                                        <img src="assets/images/asos.png" alt="asos" width="40" height="40">
                                         <span>ASOS</span>
                                     </a>
                                 </div>
@@ -194,10 +223,11 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a class="dropdown-icon-item" href="#!">
-                                        <img src="assets/images/milanuncios.png" alt="Milanuncios" width="40"
+                                    {{--  --}}
+                                    <a class="dropdown-icon-item" href="{{ route('ropaZappos') }}">
+                                        <img src="assets/images/zappos.png" alt="Zappos" width="40"
                                             height="40">
-                                        <span>Milanuncios</span>
+                                        <span>Zappos</span>
                                     </a>
                                 </div>
                             </div>
@@ -221,8 +251,7 @@
                                     <h6 class="m-0 fs-16 fw-semibold"> My Cart</h6>
                                 </div>
                                 <div class="col-auto">
-                                    <span class="badge badge-soft-warning fs-13"><span
-                                            class="cartitem-badge">7</span>
+                                    <span class="badge badge-soft-warning fs-13"><span class="cartitem-badge">7</span>
                                         items</span>
                                 </div>
                             </div>
@@ -253,8 +282,7 @@
                                             </p>
                                         </div>
                                         <div class="px-2">
-                                            <h5 class="m-0 fw-normal">$<span
-                                                    class="cart-item-price">320</span></h5>
+                                            <h5 class="m-0 fw-normal">$<span class="cart-item-price">320</span></h5>
                                         </div>
                                         <div class="ps-2">
                                             <button type="button"
@@ -278,8 +306,7 @@
                                             </p>
                                         </div>
                                         <div class="px-2">
-                                            <h5 class="m-0 fw-normal">$<span
-                                                    class="cart-item-price">89</span></h5>
+                                            <h5 class="m-0 fw-normal">$<span class="cart-item-price">89</span></h5>
                                         </div>
                                         <div class="ps-2">
                                             <button type="button"
@@ -295,8 +322,7 @@
                                             class="me-3 rounded-circle avatar-sm p-2 bg-light" alt="user-pic">
                                         <div class="flex-1">
                                             <h6 class="mt-0 mb-1 fs-14">
-                                                <a href="apps-ecommerce-product-details.html"
-                                                    class="text-reset">
+                                                <a href="apps-ecommerce-product-details.html" class="text-reset">
                                                     Borosil Paper Cup</a>
                                             </h6>
                                             <p class="mb-0 fs-12 text-muted">
@@ -304,8 +330,7 @@
                                             </p>
                                         </div>
                                         <div class="px-2">
-                                            <h5 class="m-0 fw-normal">$<span
-                                                    class="cart-item-price">750</span></h5>
+                                            <h5 class="m-0 fw-normal">$<span class="cart-item-price">750</span></h5>
                                         </div>
                                         <div class="ps-2">
                                             <button type="button"
@@ -330,8 +355,8 @@
                                             </p>
                                         </div>
                                         <div class="px-2">
-                                            <h5 class="m-0 fw-normal">$ <span
-                                                    class="cart-item-price">1250</span></h5>
+                                            <h5 class="m-0 fw-normal">$ <span class="cart-item-price">1250</span>
+                                            </h5>
                                         </div>
                                         <div class="ps-2">
                                             <button type="button"
@@ -355,8 +380,7 @@
                                             </p>
                                         </div>
                                         <div class="px-2">
-                                            <h5 class="m-0 fw-normal">$<span
-                                                    class="cart-item-price">990</span></h5>
+                                            <h5 class="m-0 fw-normal">$<span class="cart-item-price">990</span></h5>
                                         </div>
                                         <div class="ps-2">
                                             <button type="button"
@@ -422,23 +446,23 @@
                             </div>
 
                             <div class="px-2 pt-2">
-                                <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom"
-                                    data-dropdown-tabs="true" id="notificationItemsTab" role="tablist">
+                                <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
+                                    id="notificationItemsTab" role="tablist">
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
-                                            role="tab" aria-selected="true">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab" role="tab"
+                                            aria-selected="true">
                                             All (4)
                                         </a>
                                     </li>
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#messages-tab"
-                                            role="tab" aria-selected="false">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#messages-tab" role="tab"
+                                            aria-selected="false">
                                             Messages
                                         </a>
                                     </li>
                                     <li class="nav-item waves-effect waves-light">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab"
-                                            role="tab" aria-selected="false">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab"
+                                            aria-selected="false">
                                             Alerts
                                         </a>
                                     </li>
@@ -450,12 +474,10 @@
                         <div class="tab-content" id="notificationItemsTabContent">
                             <div class="tab-pane fade show active py-2 ps-2" id="all-noti-tab" role="tabpanel">
                                 <div data-simplebar style="max-height: 300px;" class="pe-2">
-                                    <div
-                                        class="text-reset notification-item d-block dropdown-item position-relative">
+                                    <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
                                             <div class="avatar-xs me-3">
-                                                <span
-                                                    class="avatar-title bg-soft-info text-info rounded-circle fs-16">
+                                                <span class="avatar-title bg-soft-info text-info rounded-circle fs-16">
                                                     <i class="bx bx-badge-check"></i>
                                                 </span>
                                             </div>
@@ -514,8 +536,7 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="text-reset notification-item d-block dropdown-item position-relative">
+                                    <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
                                             <div class="avatar-xs me-3">
                                                 <span
@@ -546,8 +567,7 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="text-reset notification-item d-block dropdown-item position-relative">
+                                    <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
                                             <img src="assets/images/users/avatar-8.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
@@ -578,8 +598,7 @@
                                     <div class="my-3 text-center">
                                         <button type="button"
                                             class="btn btn-soft-success waves-effect waves-light">View
-                                            All Notifications <i
-                                                class="ri-arrow-right-line align-middle"></i></button>
+                                            All Notifications <i class="ri-arrow-right-line align-middle"></i></button>
                                     </div>
                                 </div>
 
@@ -705,16 +724,14 @@
                                     <div class="my-3 text-center">
                                         <button type="button"
                                             class="btn btn-soft-success waves-effect waves-light">View
-                                            All Messages <i
-                                                class="ri-arrow-right-line align-middle"></i></button>
+                                            All Messages <i class="ri-arrow-right-line align-middle"></i></button>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                 aria-labelledby="alerts-tab">
                                 <div class="w-25 w-sm-50 pt-3 mx-auto">
-                                    <img src="assets/images/svg/bell.svg" class="img-fluid"
-                                        alt="user-pic">
+                                    <img src="assets/images/svg/bell.svg" class="img-fluid" alt="user-pic">
                                 </div>
                                 <div class="text-center pb-5 mt-2">
                                     <h6 class="fs-18 fw-semibold lh-base">Hey! You have no any notifications
@@ -734,8 +751,7 @@
                                     src="{{ Auth::user()->profile_photo_url }}" alt="Header Avatar">
                             @else
                                 <img class="rounded-circle header-profile-user"
-                                    src="{{ URL::asset('assets/images/users/avatar-1.jpg') }}"
-                                    alt="Header Avatar">
+                                    src="{{ URL::asset('assets/images/users/avatar-1.jpg') }}" alt="Header Avatar">
                             @endif
                             <span class="text-start ms-xl-2">
                                 <span

@@ -70,38 +70,45 @@ if ($err) {
 }
     })->name('ropaASOS');
 //api buscador
-Route::get('/ropaTaobao', function () {
-
+Route::get('/ropaZappos', function (Request $request) {
     $curl = curl_init();
+    $request="adidas";
+    $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1&sort=relevance%2Fdesc&query=$request";
+    curl_setopt_array($curl, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "",
+        CURLOPT_HTTPHEADER => [
+            "X-RapidAPI-Host: zappos1.p.rapidapi.com",
+            "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
+            "content-type: application/json"
+        ],
+    ]);
+    curl_setopt($curl, CURLOPT_URL, $url);
 
-curl_setopt_array($curl, [
-	CURLOPT_URL => "https://taobao-api.p.rapidapi.com/api?q=adidas&api=%3CREQUIRED%3E&page=1",
-	CURLOPT_RETURNTRANSFER => true,
-	CURLOPT_FOLLOWLOCATION => true,
-	CURLOPT_ENCODING => "",
-	CURLOPT_MAXREDIRS => 10,
-	CURLOPT_TIMEOUT => 30,
-	CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	CURLOPT_CUSTOMREQUEST => "GET",
-	CURLOPT_HTTPHEADER => [
-		"X-RapidAPI-Host: taobao-api.p.rapidapi.com",
-		"X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f"
-	],
-]);
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    $todo = null;
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+    curl_close($curl);
 
-curl_close($curl);
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
 
-if ($err) {
-	echo "cURL Error #:" . $err;
-} else {
-    $todo=json_decode($response);
-    $ropaArray=$todo;
-    return view('tienda.Taobao', compact('ropaArray'));
+        $todo=json_decode($response);
+        $ropaArray=$todo->results;
+    return view('tienda.zappos', compact('ropaArray'));
 }
-})->name('ropaTaobao');
+})->name('ropaZappos');
+
 
 //ruta para el buscador
-Route::get('/buscador', [\App\Http\Controllers\BuscaController::class, 'buscador'] )->name('buscador');
+ Route::post('autocomplete', [\App\Http\Controllers\Busca::class, 'buscar'])->name('autocompletado');
+

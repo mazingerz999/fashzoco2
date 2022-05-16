@@ -3,6 +3,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-6 ">
             <h2 class="text-center">Resultado</h2>
+            {{-- <p>{{dd($array)}}</p> --}}
         </div>
     </div>
 

@@ -1,5 +1,7 @@
 @yield('css')
 <script src="{{ url('assets/js/layout.min.js') }}"></script>
+<script src="{{ url('assets/js/jquery-3.6.0.js') }}"></script>
+<script src="{{ url('assets/js/jquery-ui.js') }}"></script>
 <!-- Bootstrap Css -->
 <link href="{{ url('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 <!-- Icons Css -->
