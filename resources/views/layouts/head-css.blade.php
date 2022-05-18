@@ -12,3 +12,5 @@
 <link href="{{ url('assets/css/custom.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
 <link href="{{ url('assets/libs/jsvectormap/jsvectormap.min.css') }}" rel="stylesheet">
 <link href="{{ url('/assets/libs/aos/aos.min.css') }}" rel="stylesheet">
+
+

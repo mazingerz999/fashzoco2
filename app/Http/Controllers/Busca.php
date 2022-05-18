@@ -6,15 +6,7 @@ use Illuminate\Http\Request;
 
 class Busca extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
 
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -22,11 +14,12 @@ class Busca extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function buscar(Request $request)
+    public function busca(Request $request)
     {
-
         $curl = curl_init();
-        $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1&sort=relevance%2Fdesc&query=" . $request;
+        $texto = trim($request->get('texto'));
+
+        $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1&sort=relevance%2Fdesc&query=$texto";
         curl_setopt_array($curl, [
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
@@ -36,7 +29,7 @@ class Busca extends Controller
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => "[\n\t{\n\t\t\"facetField\": \"zc1\",\n\t\t\"values\": [\n\t\t\t\"Clothing\"\n\t\t]\n\t},\n\t{\n\t\t\"facetField\": \"zc2\",\n\t\t\"values\": [\n\t\t\t\"Swimwear\",\n\t\t\t\"Underwear & Intimates\"\n\t\t]\n\t},\n\t{\n\t\t\"facetField\": \"txAttrFacet_Gender\",\n\t\t\"values\": [\n\t\t\t\"Women\",\n\t\t\t\"Girls\"\n\t\t]\n\t}\n]",
+            CURLOPT_POSTFIELDS => "",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: zappos1.p.rapidapi.com",
                 "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
@@ -54,13 +47,104 @@ class Busca extends Controller
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
-            //  $results = $response->{'results'};
-            // $array=$todo;
-            //  return $array;
-            // return response()->json([json_encode($request),$request,$request,$request,$request,$request,$request,$request,$request,$request]);
-            return view('buscador', json_decode($response));
-        }
+
+            $todo=json_decode($response);
+            $ropaArray=$todo;
+        return view('tienda.ZapposBuscador', compact('ropaArray', 'texto'));
     }
+}
+    public function mujer()
+    {
+        $curl = curl_init();
+        $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1";
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_HTTPHEADER => [
+                "X-RapidAPI-Host: zappos1.p.rapidapi.com",
+                "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
+                "content-type: application/json"
+            ],
+            CURLOPT_POSTFIELDS => "[
+                \t{
+                \t\t\"facetField\": \"txAttrFacet_Gender\",
+                \t\t\"values\": [
+                \t\t\t\"Women\",
+                \t\t\t\"Girls\"
+                \t\t]
+                \t}
+                ]",
+        ]);
+        curl_setopt($curl, CURLOPT_URL, $url);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        $todo = null;
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+
+            $todo=json_decode($response);
+            $ropaArray=$todo;
+        return view('tienda.ZapposMujer', compact('ropaArray'));
+    }
+}
+    public function hombre()
+    {
+        $curl = curl_init();
+        $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1";
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "",
+            CURLOPT_HTTPHEADER => [
+                "X-RapidAPI-Host: zappos1.p.rapidapi.com",
+                "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
+                "content-type: application/json"
+            ],
+            CURLOPT_POSTFIELDS => "[
+                \t{
+                \t\t\"facetField\": \"txAttrFacet_Gender\",
+                \t\t\"values\": [
+                \t\t\t\"Men\",
+                \t\t\t\"Boys\"
+                \t\t]
+                \t}
+                ]",
+        ]);
+        curl_setopt($curl, CURLOPT_URL, $url);
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        $todo = null;
+
+        curl_close($curl);
+
+        if ($err) {
+            echo "cURL Error #:" . $err;
+        } else {
+
+            $todo=json_decode($response);
+            $ropaArray=$todo;
+        return view('tienda.ZapposHombre', compact('ropaArray'));
+    }
+}
 
     /**
      * Display the specified resource.

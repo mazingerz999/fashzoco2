@@ -55,6 +55,7 @@ curl_setopt_array($curl, [
 		"X-RapidAPI-Host: asos2.p.rapidapi.com",
 		"X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f"
 	],
+
 ]);
 $ropa = curl_exec($curl);
 $err = curl_error($curl);
@@ -69,46 +70,14 @@ if ($err) {
     return view('tienda.asos', compact('ropaArray'));
 }
     })->name('ropaASOS');
-//api buscador
-Route::get('/ropaZappos', function (Request $request) {
-    $curl = curl_init();
-    $request="adidas";
-    $url = "https://zappos1.p.rapidapi.com/products/list?limit=100&page=1&sort=relevance%2Fdesc&query=$request";
-    curl_setopt_array($curl, [
-        CURLOPT_URL => $url,
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "",
-        CURLOPT_HTTPHEADER => [
-            "X-RapidAPI-Host: zappos1.p.rapidapi.com",
-            "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
-            "content-type: application/json"
-        ],
-    ]);
-    curl_setopt($curl, CURLOPT_URL, $url);
-
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-    $todo = null;
-
-    curl_close($curl);
-
-    if ($err) {
-        echo "cURL Error #:" . $err;
-    } else {
-
-        $todo=json_decode($response);
-        $ropaArray=$todo->results;
-    return view('tienda.zappos', compact('ropaArray'));
-}
-})->name('ropaZappos');
+//apis
+Route::get('/ropaZapposBuscador', [\App\Http\Controllers\Busca::class, 'busca'])->name('ropaZapposBuscador');
+Route::get('/ropaZapposMujer', [\App\Http\Controllers\Busca::class, 'mujer'])->name('ropaZapposMujer');
+Route::get('/ropaZapposHombre', [\App\Http\Controllers\Busca::class, 'hombre'])->name('ropaZapposHombre');
+Route::get('/mapaTiendas', function(){
+    return view('mapa');
+})->name('mapaTiendas');
 
 
-//ruta para el buscador
- Route::post('autocomplete', [\App\Http\Controllers\Busca::class, 'buscar'])->name('autocompletado');
+
 

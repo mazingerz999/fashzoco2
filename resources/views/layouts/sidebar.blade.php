@@ -596,18 +596,23 @@
                 <!-- MAS -->
                 <!--SOBRE NOSOTROS  -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link" target="_blank" href="landing.html">
-                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
+                    <a class="nav-link menu-link"  href="{{ route('ropaASOS') }}">
+                        <i class="mdi mdi-shoe-formal"></i> <span data-key="t-landing">Zapatillas Asos </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" target="_blank" href="landing.html">
-                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
+                    <a class="nav-link menu-link"  href="{{ route('ropaZapposHombre') }}">
+                        <i class="mdi mdi-face-man"></i> <span data-key="t-landing">Zappos Hombre </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" target="_blank" href="landing.html">
-                        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sobre Nosotros </span>
+                    <a class="nav-link menu-link"  href="{{ route('ropaZapposMujer') }}">
+                        <i class="mdi mdi-face-woman"></i> <span data-key="t-landing">Zappos Mujer</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link"  href="{{ route('ropaZapposBuscador') }}">
+                        <i class="ri ri-search-line "></i> <span data-key="t-landing">Buscador de Ariculos</span>
                     </a>
                 </li>
 

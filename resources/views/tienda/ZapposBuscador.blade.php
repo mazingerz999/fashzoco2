@@ -5,27 +5,34 @@
             <h2 class="text-center">ZAPPOS STORE</h2>
         </div>
     </div>
+
     <div class="row d-flex justify-content-center pt-2">
         <div class="col-4 ">
+            <form action="{{ route('ropaZapposBuscador') }}" method="get">
+                <label class="form-check-label py-1" > Busqueda en la web</label>
             <div class="input-group">
-                <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Buscar</button>
+                <input type="text" class="form-control" id="busqueda" aria-label="Recipient's username" aria-describedby="button-addon2" name="texto" value="{{$texto}}">
+                <button class="btn btn-outline-success" type="submit" id="button-addon2">Buscar</button>
             </div>
+        </form>
         </div>
     </div>
 
-    <div class="row pt-2">
+    <div class="row py-4">
         <div class="col-xxl-12">
-
             <div class="d-flex flex-column h-100">
                 <div class="row">
-                    {{-- <p>{{dd($ropaArray)}}</p> --}}
-                    @foreach ($ropaArray as $value)
-                        <div class="col-md-3 px-4">
+                    @foreach ($ropaArray->results as $value)
+                        <div class="col-md-2">
                             <!-- EMPIEZA CARD -->
                             <div class="card border card-border-dark text-center" data-aos="flip-right">
-                                <img class="card-img-top img-fluid p-1" src=""
+                                @if ($value->thumbnailImageUrl==null)
+                                <img class="card-img-top img-fluid p-1" src="https://www.cuestalibros.com/content/images/thumbs/default-image_550.png"
                                     alt="">
+                                @else
+                                <img class="card-img-top img-fluid p-1" src="{{$value->thumbnailImageUrl}}"
+                                    alt="">
+                                @endif
                                 <div class="card-body">
                                     <h4 class="card-title mb-2 text-primary">{{ $value->brandName }}</h4>
                                     <p class="card-text mb-0">{{ $value->productName }} </p>
