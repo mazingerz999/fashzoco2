@@ -25,9 +25,10 @@
         </button>
     </div>
 
+
     <div id="scrollbar">
         <div class="container-fluid">
-
+            <p>{{dd($categorias)}}</p>
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav" data-aos="zoom-out">
@@ -41,24 +42,36 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="dashboard-analytics.html" class="nav-link"
-                                    data-key="t-analytics"> Analytics
+                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+
+
+                                                <!-- aqui iria un bucle con el array pero estoy probando a imprimirlo primero -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
+                                        </li>
+                                            <!-- Fin del bucle -->
+                                    </ul>
+                                </div>
                             </li>
                             <li class="nav-item">
-                                <a href="dashboard-crm.html" class="nav-link" data-key="t-crm"> CRM </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link" data-key="t-ecommerce"> Ecommerce
+                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard-crypto.html" class="nav-link" data-key="t-crypto">
-                                    Crypto </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="dashboard-projects.html" class="nav-link" data-key="t-projects">
-                                    Projects </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
+                                        </li>
+                                            <!-- Fin del bucle -->
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -69,236 +82,41 @@
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class="las la-shoe-prints "></i> <span data-key="t-apps">Zapatos</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarApps">
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="apps-calendar.html" class="nav-link" data-key="t-calendar">
-                                    Calendar </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="apps-mailbox.html" class="nav-link" data-key="t-mailbox">
-                                    Mailbox </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarEcommerce" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarEcommerce"
-                                    data-key="t-ecommerce">
-                                    Ecommerce
+                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
-                                <div class="collapse menu-dropdown" id="sidebarEcommerce">
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-ecommerce-products.html" class="nav-link"
-                                                data-key="t-products"> Products </a>
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-product-details.html"
-                                                class="nav-link" data-key="t-product-Details"> Product
-                                                Details </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-add-product.html" class="nav-link"
-                                                data-key="t-create-product"> Create Product </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-orders.html" class="nav-link"
-                                                data-key="t-orders">
-                                                Orders </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-order-details.html" class="nav-link"
-                                                data-key="t-order-details"> Order Details </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-customers.html" class="nav-link"
-                                                data-key="t-customers"> Customers </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-cart.html" class="nav-link"
-                                                data-key="t-shopping-cart"> Shopping Cart </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-checkout.html" class="nav-link"
-                                                data-key="t-checkout"> Checkout </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-sellers.html" class="nav-link"
-                                                data-key="t-sellers">
-                                                Sellers </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-ecommerce-seller-details.html" class="nav-link"
-                                                data-key="t-sellers-details"> Seller Details </a>
-                                        </li>
+                                            <!-- Fin del bucle -->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarProjects" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarProjects"
-                                    data-key="t-projects">
-                                    Projects
+                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
-                                <div class="collapse menu-dropdown" id="sidebarProjects">
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="apps-projects-list.html" class="nav-link"
-                                                data-key="t-list"> List
-                                            </a>
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="apps-projects-overview.html" class="nav-link"
-                                                data-key="t-overview"> Overview </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-projects-create.html" class="nav-link"
-                                                data-key="t-create-project"> Create Project </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarTasks"
-                                    data-key="t-tasks"> Tasks
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarTasks">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="apps-tasks-kanban.html" class="nav-link"
-                                                data-key="t-kanbanboard">
-                                                Kanban Board </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-tasks-list-view.html" class="nav-link"
-                                                data-key="t-list-view">
-                                                List View </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-tasks-details.html" class="nav-link"
-                                                data-key="t-task-details"> Task Details </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarCRM" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarCRM"
-                                    data-key="t-crm"> CRM
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarCRM">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="apps-crm-contacts.html" class="nav-link"
-                                                data-key="t-contacts">
-                                                Contacts </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crm-companies.html" class="nav-link"
-                                                data-key="t-companies">
-                                                Companies </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crm-deals.html" class="nav-link"
-                                                data-key="t-deals"> Deals
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crm-leads.html" class="nav-link"
-                                                data-key="t-leads"> Leads
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarCrypto" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarCrypto"
-                                    data-key="t-crypto"> Crypto
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarCrypto">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-transactions.html" class="nav-link"
-                                                data-key="t-transactions"> Transactions </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-buy-sell.html" class="nav-link"
-                                                data-key="t-buy-sell">
-                                                Buy & Sell </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-orders.html" class="nav-link"
-                                                data-key="t-orders">
-                                                Orders </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-wallet.html" class="nav-link"
-                                                data-key="t-my-wallet">
-                                                My Wallet </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-ico.html" class="nav-link"
-                                                data-key="t-ico-list"> ICO
-                                                List </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-crypto-kyc.html" class="nav-link"
-                                                data-key="t-kyc-application"> KYC Application </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarInvoices" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarInvoices"
-                                    data-key="t-invoices">
-                                    Invoices
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarInvoices">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="apps-invoices-list.html" class="nav-link"
-                                                data-key="t-list-view">
-                                                List View </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-invoices-details.html" class="nav-link"
-                                                data-key="t-details">
-                                                Details </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-invoices-create.html" class="nav-link"
-                                                data-key="t-create-invoice"> Create Invoice </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarTickets" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarTickets"
-                                    data-key="t-supprt-tickets">
-                                    Support Tickets
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarTickets">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="apps-tickets-list.html" class="nav-link"
-                                                data-key="t-list-view">
-                                                List View </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="apps-tickets-details.html" class="nav-link"
-                                                data-key="t-ticket-details"> Ticket Details </a>
-                                        </li>
+                                            <!-- Fin del bucle -->
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                </li>
                 </li>
                 <!-- COMPLEMENTOS -->
                 <li class="nav-item">
@@ -306,23 +124,37 @@
                         role="button" aria-expanded="false" aria-controls="sidebarLayouts">
                         <i class="bx bx-glasses-alt "></i> <span data-key="t-layouts">Complementos</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarLayouts">
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="layouts-horizontal.html" target="_blank" class="nav-link"
-                                    data-key="t-horizontal">Horizontal</a>
+                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
+                                        </li>
+                                            <!-- Fin del bucle -->
+                                    </ul>
+                                </div>
                             </li>
                             <li class="nav-item">
-                                <a href="layouts-detached.html" target="_blank" class="nav-link"
-                                    data-key="t-detached">Detached</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="layouts-two-column.html" target="_blank" class="nav-link"
-                                    data-key="t-two-column">Two Column</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="layouts-vertical-hovered.html" target="_blank" class="nav-link"
-                                    data-key="t-hovered">Hovered</a>
+                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
+                                </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
+                                        </li>
+                                            <!-- Fin del bucle -->
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -336,179 +168,35 @@
                         <i class=" bx bx-football "></i> <span
                             data-key="t-authentication">Deporte</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarAuth">
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#sidebarSignIn" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarSignIn"
-                                    data-key="t-signin"> Sign In
+                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
-                                <div class="collapse menu-dropdown" id="sidebarSignIn">
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-signin-basic.html" class="nav-link"
-                                                data-key="t-basic"> Basic
-                                            </a>
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="auth-signin-cover.html" class="nav-link"
-                                                data-key="t-cover"> Cover
-                                            </a>
-                                        </li>
+                                            <!-- Fin del bucle -->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#sidebarSignUp" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarSignUp"
-                                    data-key="t-signup"> Sign Up
+                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
-                                <div class="collapse menu-dropdown" id="sidebarSignUp">
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="auth-signup-basic.html" class="nav-link"
-                                                data-key="t-basic"> Basic
-                                            </a>
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="auth-signup-cover.html" class="nav-link"
-                                                data-key="t-cover"> Cover
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#sidebarResetPass" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarResetPass"
-                                    data-key="t-password-reset">
-                                    Password Reset
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarResetPass">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-pass-reset-basic.html" class="nav-link"
-                                                data-key="t-basic">
-                                                Basic </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-pass-reset-cover.html" class="nav-link"
-                                                data-key="t-cover">
-                                                Cover </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#sidebarLockScreen" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarLockScreen"
-                                    data-key="t-lock-screen">
-                                    Lock Screen
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarLockScreen">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-lockscreen-basic.html" class="nav-link"
-                                                data-key="t-basic">
-                                                Basic </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-lockscreen-cover.html" class="nav-link"
-                                                data-key="t-cover">
-                                                Cover </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="#sidebarLogout" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarLogout"
-                                    data-key="t-logout"> Logout
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarLogout">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-logout-basic.html" class="nav-link"
-                                                data-key="t-basic"> Basic
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-logout-cover.html" class="nav-link"
-                                                data-key="t-cover"> Cover
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarSuccessMsg" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarSuccessMsg"
-                                    data-key="t-success-message"> Success Message
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarSuccessMsg">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-success-msg-basic.html" class="nav-link"
-                                                data-key="t-basic">
-                                                Basic </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-success-msg-cover.html" class="nav-link"
-                                                data-key="t-cover">
-                                                Cover </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarTwoStep" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarTwoStep"
-                                    data-key="t-two-step-verification"> Two Step Verification
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarTwoStep">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-twostep-basic.html" class="nav-link"
-                                                data-key="t-basic"> Basic
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-twostep-cover.html" class="nav-link"
-                                                data-key="t-cover"> Cover
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarErrors" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarErrors"
-                                    data-key="t-errors"> Errors
-                                </a>
-                                <div class="collapse menu-dropdown" id="sidebarErrors">
-                                    <ul class="nav nav-sm flex-column">
-                                        <li class="nav-item">
-                                            <a href="auth-404-basic.html" class="nav-link"
-                                                data-key="t-404-basic"> 404
-                                                Basic </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-404-cover.html" class="nav-link"
-                                                data-key="t-404-cover"> 404
-                                                Cover </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-404-alt.html" class="nav-link"
-                                                data-key="t-404-alt"> 404 Alt
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="auth-500.html" class="nav-link" data-key="t-500">
-                                                500 </a>
-                                        </li>
+                                            <!-- Fin del bucle -->
                                     </ul>
                                 </div>
                             </li>
@@ -521,67 +209,37 @@
                         aria-expanded="false" aria-controls="sidebarPages">
                         <i class="bx bxs-compass "></i> <span data-key="t-pages">Streetwear</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarPages">
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="pages-starter.html" class="nav-link" data-key="t-starter">
-                                    Starter </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#sidebarProfile" class="nav-link" data-bs-toggle="collapse"
-                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"
-                                    data-key="t-profile"> Profile
+                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="pages-profile.html" class="nav-link"
-                                                data-key="t-simple-page">
-                                                Simple Page </a>
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="pages-profile-settings.html" class="nav-link"
-                                                data-key="t-settings"> Settings </a>
-                                        </li>
+                                            <!-- Fin del bucle -->
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="pages-team.html" class="nav-link" data-key="t-team"> Team </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-timeline.html" class="nav-link" data-key="t-timeline">
-                                    Timeline </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-faqs.html" class="nav-link" data-key="t-faqs"> FAQs </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-pricing.html" class="nav-link" data-key="t-pricing">
-                                    Pricing </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-gallery.html" class="nav-link" data-key="t-gallery">
-                                    Gallery </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-maintenance.html" class="nav-link"
-                                    data-key="t-maintenance"> Maintenance
+                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                    role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-coming-soon.html" class="nav-link"
-                                    data-key="t-coming-soon"> Coming Soon
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-sitemap.html" class="nav-link" data-key="t-sitemap">
-                                    Sitemap </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages-search-results.html" class="nav-link"
-                                    data-key="t-search-results"> Search
-                                    Results </a>
+                                <div class="collapse menu-dropdown" id="sidebarProfile">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                                <!-- aqui un bucle con lo de la bd -->
+                                            <a href="pages-profile.html" class="nav-link">
+                                                ETC... </a>
+                                        </li>
+                                            <!-- Fin del bucle -->
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -29,6 +30,9 @@ Route::middleware([
     })->name('dashboard');
 
 });
+//RUTA CATEGORIAS
+
+Route::get('layouts.sidebar', [CategoriaController::class, 'index'])->name('arrayCategorias');
 //RUTE DE PANEL DE USUARIO
 Route::get('/profile', function () {
     return view('profile.show');
