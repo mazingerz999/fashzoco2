@@ -17,6 +17,7 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('marca');
             $table->string('modelo');
+            $table->string('file_path');
             $table->integer('cantidad');
             $table->integer('precio');
             $table->boolean('sexo');

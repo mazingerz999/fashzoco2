@@ -16,10 +16,6 @@ class CategoriaController extends Controller
     public function index()
     {
 
-        $categorias=Categoria::all();
-
-           return view('layouts.sidebar', compact('categorias'));
-            //  return ($categorias);
     }
 
     /**

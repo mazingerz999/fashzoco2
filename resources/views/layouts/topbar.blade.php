@@ -10,7 +10,7 @@
                             <img src="assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="17">
+                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> Fashzoco
                         </span>
                     </a>
 
@@ -19,7 +19,7 @@
                             <img src="assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="17">
+                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> Fashzoco
                         </span>
                     </a>
                 </div>
@@ -409,8 +409,12 @@
                             <span class="text-start ms-xl-2">
                                 <span
                                     class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
-                                <span
-                                    class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">{{ Auth::check() }}</span>
+                                    @if (Auth::User()->escomprador==0)
+                                    <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Comprador</span>
+                                    @else
+                                    <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Vendedor</span>
+                                    @endif
+
                             </span>
                         </span>
                     </button>

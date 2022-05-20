@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Http\Requests\StoreProductoRequest;
 use App\Http\Requests\UpdateProductoRequest;
+use App\Models\Categoria;
 
 class ProductoController extends Controller
 {
@@ -48,6 +49,21 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+
+    }
+    public function productosHombre(Categoria $categoria)
+    {
+
+        $prodMasculino= Producto::where('sexo', '=', '0')->where('categoria_id', '=', $categoria->id)->get();
+        //return (json_encode($categoria));
+        return view('productosMasc', compact('prodMasculino'));
+
+    }
+    public function productosMujer(Categoria $categoria)
+    {
+        //select * from productos where sexo=0
+        $prodFemenino = Producto::where('sexo', '=', '1')->where('categoria_id', '=', $categoria->id)->get();
+        return view('productosFem', compact('prodFemenino'));
     }
 
     /**

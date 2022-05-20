@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Http;
 
 //RUTA INICIAL ME LLEVA AL LOGIN
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('home');
+Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
+Route::get('/productosFem/{categoria} ', [\App\Http\Controllers\ProductoController::class, 'productosMujer'] )->name('productosFem');
 //RUTA QUE ME REDIRECCIONA DESPUES DE LOGUEARME
 Route::middleware([
     'auth:sanctum',
@@ -30,9 +32,8 @@ Route::middleware([
     })->name('dashboard');
 
 });
-//RUTA CATEGORIAS
 
-Route::get('layouts.sidebar', [CategoriaController::class, 'index'])->name('arrayCategorias');
+
 //RUTE DE PANEL DE USUARIO
 Route::get('/profile', function () {
     return view('profile.show');

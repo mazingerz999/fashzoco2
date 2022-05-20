@@ -11,4 +11,9 @@ class Categoria extends Model
 
     protected $table = "categorias";
     protected $guarded = []; //con este array vale para evitar el error del token que viene de el campo de seguridad
+
+    public function productos()
+    {
+        return $this->hasMany(Producto::class);
+    }
 }
