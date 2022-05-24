@@ -23,6 +23,8 @@ class User extends Authenticatable
      *
      * @var string[]
      */
+    protected $table = "users";
+    protected $guarded = []; //con este array vale para evitar el error del token que viene de el campo de seguridad
     protected $fillable = [
         'name',
         'email',

@@ -17,10 +17,10 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('marca');
             $table->string('modelo');
-            $table->string('file_path');
             $table->integer('cantidad');
             $table->integer('precio');
             $table->boolean('sexo');
+            $table->string('imagen')->nullable();
             $table->date('fechaFabricacion');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

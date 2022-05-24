@@ -16,7 +16,7 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -34,7 +34,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -42,7 +42,7 @@
                                         <!-- LLenando categorias -->
                                         @foreach ($categoriasRopa as $categoriaRopa)
                                         <li class="nav-item">
-                                            <a href="{{route('productosMasc' , $categoriaRopa )}}" class="nav-link">
+                                            <a href="{{route('productosFem' , $categoriaRopa )}}" class="nav-link">
                                                 {{$categoriaRopa->nombrecategoria}} </a>
                                         </li>
                                         @endforeach
@@ -62,7 +62,7 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -81,7 +81,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -89,7 +89,7 @@
                                         <!-- LLenando categorias -->
                                         @foreach ($categoriasZapatos as $categoriaZapato)
                                         <li class="nav-item">
-                                            <a href="{{route('productosMasc' , $categoriaZapato )}}" class="nav-link">
+                                            <a href="{{route('productosFem' , $categoriaZapato )}}" class="nav-link">
                                                 {{$categoriaZapato->nombrecategoria}} </a>
                                         </li>
                                         @endforeach
@@ -111,15 +111,15 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
                                     <ul class="nav nav-sm flex-column">
                                           <!-- LLenando categorias -->
                                           @foreach ($categoriasAccesorios as $categoriasAccesorio)
-                                          <li class="{{route('productosMasc' , $categoriasAccesorio )}}">
-                                              <a href="pages-profile.html" class="nav-link">
+                                          <li class="nav-item">
+                                              <a href="{{route('productosMasc' , $categoriasAccesorio )}}" class="nav-link">
                                                   {{$categoriasAccesorio->nombrecategoria}} </a>
                                           </li>
                                           @endforeach
@@ -128,7 +128,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -136,7 +136,7 @@
                                            <!-- LLenando categorias -->
                                            @foreach ($categoriasAccesorios as $categoriasAccesorio)
                                            <li class="nav-item">
-                                               <a href="{{route('productosMasc' , $categoriasAccesorio )}}" class="nav-link">
+                                               <a href="{{route('productosFem' , $categoriasAccesorio )}}" class="nav-link">
                                                    {{$categoriasAccesorio->nombrecategoria}} </a>
                                            </li>
                                            @endforeach
@@ -159,7 +159,7 @@
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="#hombre" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Hombre
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -176,7 +176,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a href="#mujer" class="nav-link" data-bs-toggle="collapse"
+                                <a href="#" class="nav-link" data-bs-toggle="collapse"
                                     role="button" aria-expanded="false" aria-controls="sidebarProfile"> Mujer
                                 </a>
                                 <div class="collapse menu-dropdown" id="sidebarProfile">
@@ -184,7 +184,7 @@
                                                <!-- LLenando categorias -->
                                                @foreach ($categoriasDeportes as $categoriasDeporte)
                                                <li class="nav-item">
-                                                   <a href="{{route('productosMasc' , $categoriasDeporte )}}" class="nav-link">
+                                                   <a href="{{route('productosFem' , $categoriasDeporte )}}" class="nav-link">
                                                        {{$categoriasDeporte->nombrecategoria}} </a>
                                                </li>
                                                @endforeach
@@ -218,17 +218,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link"  href="{{ route('ropaZapposHombre') }}">
-                        <i class="mdi mdi-face-man"></i> <span >Zappos Hombre </span>
+                        <i class="mdi mdi-face-man"></i> <span >Tienda Zappos Hombre </span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link"  href="{{ route('ropaZapposMujer') }}">
-                        <i class="mdi mdi-face-woman"></i> <span data-key="t-landing">Zappos Mujer</span>
+                        <i class="mdi mdi-face-woman"></i> <span data-key="t-landing">Tienda Zappos Mujer</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link menu-link"  href="{{ route('ropaZapposBuscador') }}">
-                        <i class="ri ri-search-line "></i> <span data-key="t-landing">Buscador de Ariculos</span>
+                        <i class="ri ri-search-line "></i> <span data-key="t-landing">Buscador Tienda Zappos</span>
                     </a>
                 </li>
 
