@@ -26,19 +26,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $categoriasropa = Categoria::take(10)->get();
+        $categoriasropa = Categoria::take(9)->get();
 
         View::share('categoriasRopa', $categoriasropa);
         //
-        $categoriasZapatos = Categoria::skip(10)->take(10)->get();
+        $categoriasZapatos = Categoria::skip(9)->take(10)->get();
 
         View::share('categoriasZapatos', $categoriasZapatos);
         //
-        $categoriasAccesorios= Categoria::skip(20)->take(14)->get();
+        $categoriasAccesorios= Categoria::skip(19)->take(15)->get();
 
         View::share('categoriasAccesorios', $categoriasAccesorios);
         //
-        $categoriasDeportes= Categoria::skip(34)->take(17)->get();
+        $categoriasDeportes= Categoria::skip(34)->take(9)->get();
 
         View::share('categoriasDeportes', $categoriasDeportes);
 

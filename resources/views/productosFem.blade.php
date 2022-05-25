@@ -2,10 +2,14 @@
 @section('content')
     <div class="row d-flex justify-content-center">
         <div class="col-6 ">
-            <h2 class="text-center">Lista de Productos</h2>
+            <h2 class="text-center">{{$prodFemenino[0]->categoria->nombrecategoria}}</h2>
         </div>
     </div>
+
     <div class="row d-flex p-3">
+        @if (count($prodFemenino)<=0)
+        <p class="text-muted mt-4 ">No hay articulos en esta categoria!</p>
+        @else
         @foreach ($prodFemenino as $producto)
         <div class="col-md-3">
             <div class="card card-body">
@@ -15,7 +19,7 @@
                     </div>
                     <div class="flex-grow-1 ms-2">
                         <h5 class="card-title mb-1">{{$producto->marca}} <span> | </span> {{$producto->modelo}} </h5>
-                        <p class="text-muted mb-0">Vendedor: {{$producto->user->name}}</p>
+                       <a href="#"><p class="text-muted mb-0">Vendedor: {{$producto->user->name}}</p></a>
                     </div>
                 </div>
                 <h6 class="mb-1">Precio: {{$producto->precio}} €</h6>
@@ -26,6 +30,7 @@
             </div>
         </div>
         @endforeach
+        @endif
     </div>
 
 @endsection

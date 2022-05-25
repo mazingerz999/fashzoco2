@@ -9,10 +9,10 @@ class CategoriaSeeder extends Seeder
 {
 
     private $categorias = array('Camisetas y Polos', 'Camisas', 'Vaqueros', 'Sudaderas', 'Pantalones', 'Pantalones Cortos', 'Ropa Interior', 'Abrigos',
-     'Trajes', 'Zapatillas', 'Zapatos Bajos', 'Zapatos Abiertos', 'Mocasines', 'Zapatos sin cordones', 'Sandalias', 'Zapatillas Deportivas', 'Zapatos de traje',
+     'Trajes', 'Nauticos', 'Zapatos Escalada', 'Plantillas', 'Mocasines', 'Zapatos sin cordones', 'Sandalias', 'Zapatillas Deportivas', 'Zapatos de traje',
      'Botas', 'Zapatillas de casa', 'Gafas de sol', 'Bolsos y Maletas', 'Gorros y sombreros', 'Cinturones', 'Relojes', 'Gafas filtro luz azul', 'Accesorios Tecnologicos', 'Bisuteria',
-     'Carteras', 'Corbatas',  'Bufandas', 'Guantes', 'Mascarillas', 'Paraguas', 'Chandal', 'Running', 'Padel y Tenis', 'Futbol', 'Baloncesto', 'Ciclismo', 'Entrenamiento', 'Golf', 'Bolsas deporte',
-     'Running', 'Padel y Tenis', 'Futbol', 'Baloncesto', 'Ciclismo', 'Entrenamiento', 'Golf' );
+     'Carteras', 'Belleza',  'Bufandas', 'Guantes', 'Mascarillas', 'Paraguas', 'Cordones', 'Running', 'Surf', 'Equipaciones', 'Escalada', 'Ciclismo', 'Skate', 'Golf', 'Bolsas deporte',
+     );
     /**
      * Run the database seeds.
      *

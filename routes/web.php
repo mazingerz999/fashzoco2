@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,42 +20,15 @@ use Illuminate\Support\Facades\Http;
 //RUTA INICIAL ME LLEVA AL LOGIN
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('home');
 Route::get('/pruebas' ,function(){
-   $aux=null;
-   $array=[];
-    $curl = curl_init();
 
-    curl_setopt_array($curl, [
-        CURLOPT_URL => "https://zappos1.p.rapidapi.com/products/list?limit=20&page=1&sort=relevance%2Fdesc",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "[\n\t{\n\t\t\"facetField\": \"zc4\",\n\t\t\"values\": [\n\t\t\t\"Golf Shoes\"\n\t\t]\n\t}\n\t\n]",
-        CURLOPT_HTTPHEADER => [
-            "X-RapidAPI-Host: zappos1.p.rapidapi.com",
-            "X-RapidAPI-Key: b73e3c56bamsh7c33431a69d060dp16ab26jsnc57335704b4f",
-            "content-type: application/json"
-        ],
-    ]);
-
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-
-    curl_close($curl);
-
-    if ($err) {
-        echo "cURL Error #:" . $err;
-    } else {
-        $zapatosGolf= json_decode($response);
-        $zapatosGolf->results;
-        for ($i=0; $i < count($zapatosGolf->results); $i++) {
-            $array[$i]=$zapatosGolf->results[$i];
-        }
-        return $array;
-    }
+  return User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+  return User::select('id')->where('escomprador','=', '0')->get();
+//  $aux=User::where('escomprador','=', '0')
+//  ->inRandomOrder()
+//  ->limit(1) // here is yours limit
+//  ->get();
+//  return $aux;
+//  return User::all()->random()->id;
 
 });
 Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
