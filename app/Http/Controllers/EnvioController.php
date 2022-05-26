@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\envio;
+use App\Models\Producto;
 use App\Http\Requests\StoreenvioRequest;
 use App\Http\Requests\UpdateenvioRequest;
 

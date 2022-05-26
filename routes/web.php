@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
+use App\Models\Producto;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,20 +20,16 @@ use App\Models\User;
 
 //RUTA INICIAL ME LLEVA AL LOGIN
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('home');
-Route::get('/pruebas' ,function(){
+// Route::get('/pruebas' ,function(){
 
-  return User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-  return User::select('id')->where('escomprador','=', '0')->get();
-//  $aux=User::where('escomprador','=', '0')
-//  ->inRandomOrder()
-//  ->limit(1) // here is yours limit
-//  ->get();
-//  return $aux;
-//  return User::all()->random()->id;
+//     Producto::where('id','=','2')->delete();
 
-});
+// });
+
+Route::get('/envios/{producto}', [\App\Http\Controllers\VentaController::class, 'productoEnvio'] )->name('productoEnvio');
 Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
 Route::get('/productosFem/{categoria} ', [\App\Http\Controllers\ProductoController::class, 'productosMujer'] )->name('productosFem');
+ Route::get('graciasCompra/{item}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
 //RUTA QUE ME REDIRECCIONA DESPUES DE LOGUEARME
 Route::middleware([
     'auth:sanctum',

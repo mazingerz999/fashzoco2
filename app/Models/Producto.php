@@ -21,6 +21,10 @@ class Producto extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function envio()
+    {
+        return $this->belongsTo(envio::class);
+    }
 
     // public function getRouteKeyName() {
     //     return 'slug';

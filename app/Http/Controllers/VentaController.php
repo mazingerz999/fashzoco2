@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use App\Models\venta;
 use App\Http\Requests\StoreventaRequest;
 use App\Http\Requests\UpdateventaRequest;
@@ -17,6 +18,11 @@ class VentaController extends Controller
     {
         //
     }
+    public function productoEnvio(Producto $producto)
+    {
+        $ticket = Producto::where('id', '=', $producto->id)->where('user_id', '=', $producto->user_id)->where('envio_id', '=', $producto->envio_id)->get();
+        return view('ventas', compact('ticket'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -26,6 +32,19 @@ class VentaController extends Controller
     public function create()
     {
         //
+    }
+    public function insertDelete(Producto $item)
+    {
+         $date = date('Y-m-d');
+       $venta=new venta();
+
+         $venta->fechaVenta=$date;
+         $venta->user_id=$item->user_id;
+        $venta->producto_id=$item->id;
+         $venta->envio_id=$item->envio_id;
+        $venta->save();
+        Producto::where('id',$item->id)->update(['vendido' => 1]);
+        return view('graciasCompra');
     }
 
     /**

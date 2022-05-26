@@ -161,348 +161,388 @@ class ProductoSeeder extends Seeder
     public function run()
     {
 
-   //ROPA/////////////////////////////////////
-  //
-  foreach ($this->zc2('Shirts & Tops') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(1)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Sweaters') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(2)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Jeans') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(3)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Hoodies & Sweatshirts') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(4)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Pants') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(5)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Shorts') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(6)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Underwear & Intimates') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(7)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Coat & Outerwear') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(8)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Dresses') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(9)->id;
-    $a->imagen = null;
-    $a->save();
-}
-   //ZAPATOS/////////////////////////////////////
-  //
-  foreach ($this->zc2('Boat Shoes') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(10)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Hiking') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(11)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Insoles & Accessories') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(12)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Loafers') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(13)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Clogs') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(14)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Sandals') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-    $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(15)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Sneakers & Athletic Shoes') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(16)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Oxford') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(17)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Boots') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(18)->id;
-    $a->imagen = null;
-    $a->save();
-}
-  //
-  foreach ($this->zc2('Crib Shoes') as $producto) {
-    $a = new Producto();
-    $a->marca = $producto->brandName;
-    $a->modelo = $producto->productName;
-    $a->cantidad = $producto->reviewRating + 1;
-    $a->precio = rand(10, 200);
-    $random = rand(0, 1) == 1;
-    $a->sexo = $random;
-    $timestamp = mt_rand(1, time());
-    $randomDate = date("y-m-d", $timestamp);
-    $a->fechaFabricacion = $randomDate;
-     $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-    $a->categoria_id = Categoria::find(19)->id;
-    $a->imagen = null;
-    $a->save();
-}
-      //gafas
-      foreach ($this->zc2('Sunglasses') as $producto) {
-        $a = new Producto();
-        $a->marca = $producto->brandName;
-        $a->modelo = $producto->productName;
-        $a->cantidad = $producto->reviewRating + 1;
-        $a->precio = rand(10, 200);
-        $random = rand(0, 1) == 1;
-        $a->sexo = $random;
-        $timestamp = mt_rand(1, time());
-        $randomDate = date("y-m-d", $timestamp);
-        $a->fechaFabricacion = $randomDate;
-         $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
-        $a->categoria_id = Categoria::find(20)->id;
-        $a->imagen = null;
-        $a->save();
-    }
+        //ROPA/////////////////////////////////////
+        //
+        foreach ($this->zc2('Shirts & Tops') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+            $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(1)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Sweaters') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+             $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(2)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Jeans') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(3)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Hoodies & Sweatshirts') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(4)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Pants') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(5)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Shorts') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(6)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Underwear & Intimates') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(7)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Coat & Outerwear') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(8)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Dresses') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(9)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //ZAPATOS/////////////////////////////////////
+        //
+        foreach ($this->zc2('Boat Shoes') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(10)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Hiking') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(11)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Insoles & Accessories') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(12)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Loafers') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(13)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Clogs') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(14)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Sandals') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(15)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Sneakers & Athletic Shoes') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(16)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Oxford') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(17)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Boots') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(18)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //
+        foreach ($this->zc2('Crib Shoes') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(19)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
+        //gafas
+        foreach ($this->zc2('Sunglasses') as $producto) {
+            $a = new Producto();
+            $a->marca = $producto->brandName;
+            $a->modelo = $producto->productName;
+            $a->cantidad = $producto->reviewRating + 1;
+            $a->precio = rand(10, 200);
+            $random = rand(0, 1) == 1;
+                       $a->sexo = $random;
+            $a->vendido = 0;
+            $timestamp = mt_rand(1, time());
+            $randomDate = date("y-m-d", $timestamp);
+            $a->fechaFabricacion = $randomDate;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
+            $a->categoria_id = Categoria::find(20)->id;
+            $a->imagen = null;
+            $a->envio_id = rand(1,6);
+            $a->save();
+        }
         //bolsos y maletas
         foreach ($this->zc1('Bags') as $producto) {
             $a = new Producto();
@@ -511,13 +551,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(21)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //sombreros
@@ -528,13 +570,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(22)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //cinturones
@@ -545,13 +589,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(23)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //relojes
@@ -562,13 +608,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(24)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //gafas AZULES
@@ -579,13 +627,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(25)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //accesorios tec
@@ -596,13 +646,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(26)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //bisuteria
@@ -613,13 +665,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(27)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //carteras
@@ -630,13 +684,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(28)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //corbatas
@@ -647,13 +703,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(29)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //bufandas
@@ -664,13 +722,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(30)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //guantes
@@ -681,13 +741,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(31)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //mascarillas
@@ -698,13 +760,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(32)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //LLENO PARAGUAS
@@ -715,13 +779,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(33)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //cordones
@@ -732,13 +798,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(34)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //DEPORTES/////////////////////////////////////////////////
@@ -751,13 +819,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(35)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //surf
@@ -768,13 +838,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(36)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //equipaciones
@@ -785,13 +857,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(37)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //escalada
@@ -802,13 +876,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(38)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //ciclismo
@@ -819,13 +895,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(39)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         //skate
@@ -836,13 +914,16 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(40)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
+
             $a->save();
         }
         //golf
@@ -853,13 +934,15 @@ class ProductoSeeder extends Seeder
             $a->cantidad = $producto->reviewRating + 1;
             $a->precio = rand(10, 200);
             $random = rand(0, 1) == 1;
-            $a->sexo = $random;
+                       $a->sexo = $random;
+            $a->vendido = 0;
             $timestamp = mt_rand(1, time());
             $randomDate = date("y-m-d", $timestamp);
             $a->fechaFabricacion = $randomDate;
-             $a->user_id = User::inRandomOrder()->where('escomprador','=', '0')->first()->id;
+            $a->user_id = User::inRandomOrder()->where('escomprador', '=', '0')->first()->id;
             $a->categoria_id = Categoria::find(41)->id;
             $a->imagen = null;
+            $a->envio_id = rand(1,6);
             $a->save();
         }
         // foreach ($this->productos as $producto) {

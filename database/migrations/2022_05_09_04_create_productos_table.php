@@ -20,10 +20,13 @@ class CreateProductosTable extends Migration
             $table->integer('cantidad');
             $table->integer('precio');
             $table->boolean('sexo');
+            $table->boolean('vendido');
             $table->string('imagen')->nullable();
             $table->date('fechaFabricacion');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('envio_id');
+            $table->foreign('envio_id')->references('id')->on('envios');
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();

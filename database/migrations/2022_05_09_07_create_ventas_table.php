@@ -18,10 +18,10 @@ class CreateVentasTable extends Migration
             $table->date('fechaVenta');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->unsignedBigInteger('envio_id');
             $table->foreign('envio_id')->references('id')->on('envios');
-            $table->unsignedBigInteger('valoracion_id');
-            $table->foreign('valoracion_id')->references('id')->on('valoracions');
 
             $table->timestamps();
         });

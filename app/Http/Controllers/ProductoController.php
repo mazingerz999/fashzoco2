@@ -6,6 +6,8 @@ use App\Models\Producto;
 use App\Http\Requests\StoreProductoRequest;
 use App\Http\Requests\UpdateProductoRequest;
 use App\Models\Categoria;
+use App\Models\envio;
+use App\Models\User;
 
 class ProductoController extends Controller
 {
@@ -65,6 +67,7 @@ class ProductoController extends Controller
         $prodFemenino = Producto::where('sexo', '=', '1')->where('categoria_id', '=', $categoria->id)->get();
         return view('productosFem', compact('prodFemenino'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -11,6 +11,7 @@
         <p class="text-muted mt-4 ">No hay articulos en esta categoria!</p>
         @else
         @foreach ($prodFemenino as $producto)
+        @if ($producto->vendido==0)
         <div class="col-md-3">
             <div class="card card-body">
                 <div class="d-flex mb-4 align-items-center">
@@ -26,9 +27,11 @@
                 <h6 class="mb-1">Año de fabricación: {{$producto->fechaFabricacion}}</h6>
                 <p class="card-text text-muted mb-1">Sexo: Masculino</p>
                 <p class="card-text text-muted">Cantidad: {{ $producto->cantidad }}</p>
-                <a href="hacerlainsert" class="btn btn-primary btn-sm">Comprar</a>
+                <a href="{{route('productoEnvio' , $producto )}}" class="btn btn-primary btn-sm">Comprar</a>
             </div>
         </div>
+        @endif
+
         @endforeach
         @endif
     </div>
