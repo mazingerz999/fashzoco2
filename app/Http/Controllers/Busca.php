@@ -37,13 +37,10 @@ class Busca extends Controller
             ],
         ]);
         curl_setopt($curl, CURLOPT_URL, $url);
-
         $response = curl_exec($curl);
         $err = curl_error($curl);
         $todo = null;
-
         curl_close($curl);
-
         if ($err) {
             echo "cURL Error #:" . $err;
         } else {
