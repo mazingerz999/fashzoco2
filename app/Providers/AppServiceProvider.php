@@ -25,22 +25,22 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-      //  $categoriasropa = Categoria::take(9)->get();
+        
+        $categoriasropa = Categoria::take(9)->get();
 
-//View::share('categoriasRopa', $categoriasropa);
-        //
-      //  $categoriasZapatos = Categoria::skip(9)->take(10)->get();
+View::share('categoriasRopa', $categoriasropa);
+        
+        $categoriasZapatos = Categoria::skip(9)->take(10)->get();
 
-      //  View::share('categoriasZapatos', $categoriasZapatos);
-        //
+        View::share('categoriasZapatos', $categoriasZapatos);
+        
         $categoriasAccesorios= Categoria::skip(19)->take(15)->get();
 
-//View::share('categoriasAccesorios', $categoriasAccesorios);
-        //
-     //   $categoriasDeportes= Categoria::skip(34)->take(9)->get();
+View::share('categoriasAccesorios', $categoriasAccesorios);
+        
+        $categoriasDeportes= Categoria::skip(34)->take(9)->get();
 
-      //  View::share('categoriasDeportes', $categoriasDeportes);
+        View::share('categoriasDeportes', $categoriasDeportes);
 
     $imagenQR=null;
 $curl = curl_init();
