@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'fashzoco'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D5F03863CAA24221A630A54D72954ED1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C26C7BD2640241FFBA3511407BFF6476 }}
           package: .

@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+
        $comprador =Auth::user();
 
 View::share('comprador', $comprador);
@@ -45,6 +46,7 @@ View::share('categoriasAccesorios', $categoriasAccesorios);
        $categoriasDeportes= Categoria::skip(34)->take(9)->get();
 
        View::share('categoriasDeportes', $categoriasDeportes);
+
 
     $imagenQR=null;
 $curl = curl_init();
