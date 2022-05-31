@@ -25,11 +25,11 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('
 //     Producto::where('id','=','2')->delete();
 
 // });
-
+Route::get('/mostrartickets/{usuario}', [\App\Http\Controllers\VentaController::class, 'mostrartickets'] )->name('mostrartickets');
 Route::get('/envios/{producto}', [\App\Http\Controllers\VentaController::class, 'productoEnvio'] )->name('productoEnvio');
 Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
 Route::get('/productosFem/{categoria} ', [\App\Http\Controllers\ProductoController::class, 'productosMujer'] )->name('productosFem');
- Route::get('graciasCompra/{item}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
+ Route::get('graciasCompra/{item}/{comprador}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
 //RUTA QUE ME REDIRECCIONA DESPUES DE LOGUEARME
 Route::middleware([
     'auth:sanctum',

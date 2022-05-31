@@ -6,6 +6,9 @@ use App\Models\Producto;
 use App\Models\venta;
 use App\Http\Requests\StoreventaRequest;
 use App\Http\Requests\UpdateventaRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class VentaController extends Controller
 {
@@ -29,11 +32,21 @@ class VentaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
-    public function insertDelete(Producto $item)
+    public function mostrartickets($usuario){
+        //
+        $ticket=Venta::where('user_id','=', $usuario)->get();
+        return view('mostrartickets', compact('ticket'));
+    }
+       /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function insertDelete(Producto $item, Request $comprador)
     {
          $date = date('Y-m-d');
        $venta=new venta();
@@ -42,6 +55,7 @@ class VentaController extends Controller
          $venta->user_id=$item->user_id;
         $venta->producto_id=$item->id;
          $venta->envio_id=$item->envio_id;
+         $venta->comprador_id=$comprador->id;
         $venta->save();
         Producto::where('id',$item->id)->update(['vendido' => 1]);
         return view('graciasCompra');

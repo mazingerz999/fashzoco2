@@ -169,6 +169,14 @@
                             <div class="flex-shrink-0">
                                 <i class="ri-send-plane-2-line  text-success"></i>
                             </div>
+                            <div class="flex-grow-1 ms-2 text-muted">
+                                Metodo de pago: <span> </span>Contrarembolso
+                            </div>
+                        </div>
+                        <div class="d-flex my-2">
+                            <div class="flex-shrink-0">
+                                <i class="ri-send-plane-2-line  text-success"></i>
+                            </div>
                             <div class="flex-grow-1 ms-2 text-muted" id="codigo">
 
                             </div>
@@ -180,7 +188,8 @@
         </div>
     @endforeach
     <div class="d-flex my-2 justify-content-center">
-        <a href="{{ route('insertDelete' , $item) }}" class="btn btn-success btn-label waves-effect right waves-light rounded-pill"><i class="ri-check-double-line label-icon align-middle rounded-pill fs-16 ms-2"></i> Finalizar Compra</a>
+
+        <a href="{{ route('insertDelete' , $item, $comprador ) }}" class="btn btn-success btn-label waves-effect right waves-light rounded-pill"><i class="ri-check-double-line label-icon align-middle rounded-pill fs-16 ms-2"></i> Finalizar Compra</a>
 
     </div>
     <script>

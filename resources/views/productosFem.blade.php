@@ -27,7 +27,7 @@
                 <h6 class="mb-1">Año de fabricación: {{$producto->fechaFabricacion}}</h6>
                 <p class="card-text text-muted mb-1">Sexo: Masculino</p>
                 <p class="card-text text-muted">Cantidad: {{ $producto->cantidad }}</p>
-                <a href="{{route('productoEnvio' , $producto )}}" class="btn btn-primary btn-sm">Comprar</a>
+                <a href="{{route('productoEnvio' , $producto)}}" class="btn btn-primary btn-sm">Comprar</a>
             </div>
         </div>
         @endif

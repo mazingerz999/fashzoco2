@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,22 +26,25 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-      //  $categoriasropa = Categoria::take(9)->get();
 
-//View::share('categoriasRopa', $categoriasropa);
-        //
-      //  $categoriasZapatos = Categoria::skip(9)->take(10)->get();
+       $comprador =Auth::user();
 
-      //  View::share('categoriasZapatos', $categoriasZapatos);
-        //
+View::share('comprador', $comprador);
+       $categoriasropa = Categoria::take(9)->get();
+
+View::share('categoriasRopa', $categoriasropa);
+
+       $categoriasZapatos = Categoria::skip(9)->take(10)->get();
+
+       View::share('categoriasZapatos', $categoriasZapatos);
+
         $categoriasAccesorios= Categoria::skip(19)->take(15)->get();
 
-//View::share('categoriasAccesorios', $categoriasAccesorios);
-        //
-     //   $categoriasDeportes= Categoria::skip(34)->take(9)->get();
+View::share('categoriasAccesorios', $categoriasAccesorios);
 
-      //  View::share('categoriasDeportes', $categoriasDeportes);
+       $categoriasDeportes= Categoria::skip(34)->take(9)->get();
+
+       View::share('categoriasDeportes', $categoriasDeportes);
 
     $imagenQR=null;
 $curl = curl_init();
