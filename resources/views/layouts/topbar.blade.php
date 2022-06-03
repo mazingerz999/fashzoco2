@@ -196,8 +196,8 @@
                 <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Mis Tickets</span>
                 <div class="ms-1 header-item d-none d-sm-flex">
                     <!-- RUTA TICKETS -->
-                    <a  href="{{route('mostrartickets' , Auth::User()->id)}}">
-                       
+                    <a  href="{{route('mostrartickets')}}">
+
                     <button type="button"
                         class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle ">
                         <i class='ri-file-list-3-line fs-22 text-primary'></i>
@@ -208,7 +208,7 @@
                 <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Mis Productos</span>
                 <div class="ms-1 header-item d-none d-sm-flex">
                     <!-- RUTA PRODUCTOS -->
-                    <a  href="misproctos.html">
+                    <a  href="{{route('mostrarproductos')}}">
                     <button type="button"
                         class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle ">
                         <i class=' ri-archive-drawer-line fs-22 text-primary'></i>

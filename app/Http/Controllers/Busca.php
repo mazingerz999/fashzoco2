@@ -32,7 +32,7 @@ class Busca extends Controller
             CURLOPT_POSTFIELDS => "",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: zappos1.p.rapidapi.com",
-                "X-RapidAPI-Key: 3c1be475cbmshd532ffd3a8fad6fp145b65jsnb4190ea3f54a",
+                "X-RapidAPI-Key: 6eb13070f6mshe5bcefb3465a81bp100e62jsnd34e423c8eed",
                 "content-type: application/json"
             ],
         ]);
@@ -66,7 +66,7 @@ class Busca extends Controller
             CURLOPT_POSTFIELDS => "",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: zappos1.p.rapidapi.com",
-                "X-RapidAPI-Key: 3c1be475cbmshd532ffd3a8fad6fp145b65jsnb4190ea3f54a",
+                "X-RapidAPI-Key: 6eb13070f6mshe5bcefb3465a81bp100e62jsnd34e423c8eed",
                 "content-type: application/json"
             ],
             CURLOPT_POSTFIELDS => "[
@@ -112,7 +112,7 @@ class Busca extends Controller
             CURLOPT_POSTFIELDS => "",
             CURLOPT_HTTPHEADER => [
                 "X-RapidAPI-Host: zappos1.p.rapidapi.com",
-                "X-RapidAPI-Key: 3c1be475cbmshd532ffd3a8fad6fp145b65jsnb4190ea3f54a",
+                "X-RapidAPI-Key: 6eb13070f6mshe5bcefb3465a81bp100e62jsnd34e423c8eed",
                 "content-type: application/json"
             ],
             CURLOPT_POSTFIELDS => "[

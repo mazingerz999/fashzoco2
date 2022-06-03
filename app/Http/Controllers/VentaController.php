@@ -35,30 +35,24 @@ class VentaController extends Controller
     public function create(){
         //
     }
-    public function mostrartickets($usuario){
+    public function mostrartickets(){
         //
-        $ticket=Venta::where('user_id','=', $usuario)->get();
+        $ticket=Venta::where('comprador_id','=', auth()->user()->id)->get();
         return view('mostrartickets', compact('ticket'));
     }
-       /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function insertDelete(Producto $item, Request $comprador)
+
+    public function insertDelete(Producto $item)
     {
          $date = date('Y-m-d');
        $venta=new venta();
-
          $venta->fechaVenta=$date;
+         $venta->comprador_id=auth()->user()->id;
          $venta->user_id=$item->user_id;
         $venta->producto_id=$item->id;
          $venta->envio_id=$item->envio_id;
-         $venta->comprador_id=$comprador->id;
         $venta->save();
         Producto::where('id',$item->id)->update(['vendido' => 1]);
-        return view('graciasCompra');
+        return view('index');
     }
 
     /**

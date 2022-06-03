@@ -5,22 +5,17 @@
             <h2 class="text-center">{{$prodMasculino[0]->categoria->nombrecategoria}}</h2>
         </div>
     </div>
-   {{-- {{ dd($prodMasculino[0]) }} --}}
     <div class="row d-flex p-3">
         @if (count($prodMasculino)<=0)
         <p class="text-muted mt-4 ">No hay articulos en esta categoria!</p>
         @else
         @foreach ($prodMasculino as $producto)
         @if ($producto->vendido==0)
-        <div class="col-md-4">
+        <div class="col-md-4 " data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
             <div class="card card-body">
                 <div class="d-flex mb-4 align-items-center">
                     <div class="flex-shrink-0">
-                        {{-- <img src="assets/images/users/avatar-4.jpg" alt="" /> --}}
-                        <div class="avatar-xl " >
-                            {{-- {{dd($imagenQR)}} --}}
-                        </div>
-
+                        <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xl " />
                     </div>
                     <div class="flex-grow-1 ms-2">
                         <h5 class="card-title mb-1">{{$producto->marca}} <span> | </span> {{$producto->modelo}} </h5>

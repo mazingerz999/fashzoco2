@@ -1,19 +1,19 @@
 @extends('layouts.master')
 @section('content')
     <div class="row d-flex justify-content-center pt-4">
-        <div class="col-6 ">
-            <h2 class="text-center">ZAPPOS HOMBRE</h2>
+        <div class="col-2">
+            <h2 class="text-center ">TIENDA ZAPPOS HOMBRE</h2>
         </div>
     </div>
 
     <div class="row py-4">
         <div class="col-xxl-12">
             <div class="d-flex flex-column h-100">
-                <div class="row">
+                <div class="row p-2 rounded ">
                     @foreach ($ropaArray->results as $value)
-                        <div class="col-md-3 px-4">
+                        <div class="col-md-2">
                             <!-- EMPIEZA CARD -->
-                            <div class="card border card-border-dark text-center" data-aos="flip-right">
+                            <div class="card border card-border-dark text-center round" data-aos="flip-right">
                                 @if ($value->thumbnailImageUrl==null)
                                 <img class="card-img-top img-fluid p-1" src="https://www.cuestalibros.com/content/images/thumbs/default-image_550.png"
                                     alt="">

@@ -25,7 +25,7 @@
                     @foreach ($ropaArray->results as $value)
                         <div class="col-md-2">
                             <!-- EMPIEZA CARD -->
-                            <div class="card border card-border-dark text-center" data-aos="flip-right">
+                            <div class="card border card-border-dark text-center round" data-aos="flip-right">
                                 @if ($value->thumbnailImageUrl==null)
                                 <img class="card-img-top img-fluid p-1" src="https://www.cuestalibros.com/content/images/thumbs/default-image_550.png"
                                     alt="">

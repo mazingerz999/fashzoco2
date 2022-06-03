@@ -24,13 +24,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot() {
 
 
-       $comprador =Auth::user();
-
-View::share('comprador', $comprador);
        $categoriasropa = Categoria::take(9)->get();
 
 View::share('categoriasRopa', $categoriasropa);

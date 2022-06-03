@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProductoRequest;
 use App\Models\Categoria;
 use App\Models\envio;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
@@ -19,6 +20,18 @@ class ProductoController extends Controller
     public function index()
     {
         //
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function mostrarproductos()
+    {
+        //
+        $productos=Producto::where('user_id', '=',  auth()->user()->id)->get();
+
+        return view('mostrarproductos', compact('productos'));
     }
 
     /**
@@ -78,6 +91,7 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         //
+        return view("formulariomodificar", compact('producto'));
     }
 
     /**
@@ -87,9 +101,21 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateProductoRequest $request, Producto $producto)
-    {
-        //
+    public function update(Request $request, Producto  $producto) {
+
+
+        $producto->marca=$request->marca;
+        $producto->modelo= $request->modelo;
+        $producto->cantidad=$request->cantidad;
+        $producto->precio= $request->precio;
+        $producto->sexo= intval($request->sexo);
+        $producto->fechaFabricacion= $request->fechaFabricacion;
+
+       // $producto->imagen= $request->imagen->store('', 'animales');
+        $producto->save();
+        return view("index")->with("mensaje", "Ha habido un error");
+
+
     }
 
     /**

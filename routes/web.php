@@ -25,11 +25,18 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('
 //     Producto::where('id','=','2')->delete();
 
 // });
-Route::get('/mostrartickets/{usuario}', [\App\Http\Controllers\VentaController::class, 'mostrartickets'] )->name('mostrartickets');
+//tickets comprador
+Route::get('/mostrartickets', [\App\Http\Controllers\VentaController::class, 'mostrartickets'] )->name('mostrartickets');
+//productos comprador mostrar todos
+Route::get('/mostrarproductos', [\App\Http\Controllers\ProductoController::class, 'mostrarproductos'] )->name('mostrarproductos');
+//formulario con la modificacion con el producto
+ Route::get('/formulariomodificar/{producto}/edit', [\App\Http\Controllers\ProductoController::class, 'edit'] )->name('producto.edit');
+ Route::put('productos/{producto}', [\App\Http\Controllers\ProductoController::class, 'update'])->name('producto.update');
+
 Route::get('/envios/{producto}', [\App\Http\Controllers\VentaController::class, 'productoEnvio'] )->name('productoEnvio');
 Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
 Route::get('/productosFem/{categoria} ', [\App\Http\Controllers\ProductoController::class, 'productosMujer'] )->name('productosFem');
- Route::get('graciasCompra/{item}/{comprador}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
+ Route::get('graciasCompra/{item}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
 //RUTA QUE ME REDIRECCIONA DESPUES DE LOGUEARME
 Route::middleware([
     'auth:sanctum',
