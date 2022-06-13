@@ -198,7 +198,7 @@
 
                  <!--TENDENCIAS  -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link"  href="landing.html">
+                    <a class="nav-link menu-link"  href="{{ route('tendencias') }}">
                         <i class=" ri-star-half-s-line text-danger"></i> <span >Tendencias </span>
                         <span class="badge badge-pill bg-danger" >New</span>
                     </a>
@@ -207,7 +207,7 @@
                 @if (Auth::User()->escomprador==0)
                 @else
                 <li class="nav-item">
-                    <a class="nav-link menu-link"  href="formulariosubirropa.html">
+                    <a class="nav-link menu-link"  href="{{ route('venderopa') }}">
                         <i class="  ri-chat-new-line text-danger "></i> <span>Vende tu ropa</span>
 
                     </a>
@@ -215,7 +215,7 @@
                 @endif
                 <!--SOBRE NOSOTROS  -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link"  href="nosotros.html">
+                    <a class="nav-link menu-link"  href="{{ route('sobrenosotros') }}">
                         <i class=" bx bxl-facebook-circle text-danger "></i> <span>Sobre Nosotros </span>
 
                     </a>

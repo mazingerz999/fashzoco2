@@ -39,9 +39,10 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function venderopa()
     {
         //
+        return view('venderopa');
     }
 
     /**
@@ -50,9 +51,21 @@ class ProductoController extends Controller
      * @param  \App\Http\Requests\StoreProductoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductoRequest $request)
+    public function store(Request $request)
     {
-        //
+        $producto=new Producto();
+        $producto->marca=$request->marca;
+        $producto->modelo= $request->modelo;
+        $producto->cantidad=$request->cantidad;
+        $producto->precio= $request->precio;
+        $producto->sexo= intval($request->sexo);
+        $producto->fechaFabricacion= $request->fechaFabricacion;
+        $producto->vendido= 0;
+        $producto->user_id= auth()->user()->id;
+        $producto->envio_id= $request->envio;
+        $producto->categoria_id= $request->categoria;
+        $producto ->save();
+        return redirect()->route("mostrarproductos");
     }
 
     /**
@@ -113,11 +126,19 @@ class ProductoController extends Controller
 
        // $producto->imagen= $request->imagen->store('', 'animales');
         $producto->save();
-        return view("index")->with("mensaje", "Ha habido un error");
 
+        return redirect()->route("mostrarproductos");
+        // return view("index")->with("mensaje", "Ha habido un error");
 
     }
 
+    public function buscador(Request $request) {
+        //ESTA LINEA ME DEVUELVE LA VISTA INDEX CON UN ARRAY DE COMICS
+
+        $busqueda='%'.$request->buscador.'%';
+        $productos = Producto::where('marca','like',$busqueda)->get();
+        return view('buscador', compact('productos'));
+    }
     /**
      * Remove the specified resource from storage.
      *

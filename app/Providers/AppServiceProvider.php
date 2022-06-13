@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Categoria;
+use App\Models\envio;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
@@ -26,6 +27,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot() {
 
+        $todosenvios = envio::all();
+
+        View::share('todosenvios', $todosenvios);
+
+        $todasCategorias = Categoria::all();
+
+        View::share('todasCategorias', $todasCategorias);
 
        $categoriasropa = Categoria::take(9)->get();
 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\valoracion;
 use App\Http\Requests\StorevaloracionRequest;
 use App\Http\Requests\UpdatevaloracionRequest;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Usuario;
 
 class ValoracionController extends Controller
 {
@@ -23,21 +26,34 @@ class ValoracionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function formulariovaloracion()
+    {
+        //
+        return view("formulariovaloracion");
+    }
+
+    public function store(Request $request)
+    {
+        $valoracion=new valoracion();
+        $valoracion->comentario=auth()->user()->name.' dijo: '.$request->comentario;
+        $valoracion->estrellas= $request->estrellas;
+        $valoracion ->save();
+
+        return redirect()->route("listavaloraciones")->with("mensaje", "Ha habido un error");
+    }
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorevaloracionRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorevaloracionRequest $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -45,9 +61,12 @@ class ValoracionController extends Controller
      * @param  \App\Models\valoracion  $valoracion
      * @return \Illuminate\Http\Response
      */
-    public function show(valoracion $valoracion)
+    public function listavaloraciones()
     {
         //
+        $valoraciones=valoracion::all();
+
+        return view('listavaloraciones', compact('valoraciones'));
     }
 
     /**

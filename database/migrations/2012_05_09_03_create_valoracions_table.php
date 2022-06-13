@@ -16,7 +16,7 @@ class CreateValoracionsTable extends Migration
         Schema::create('valoracions', function (Blueprint $table) {
             $table->id();
             $table->longText('comentario');
-            $table->enum('estrellas', [1,2,3,4,5]);
+            $table->integer('estrellas');
             $table->timestamps();
         });
     }

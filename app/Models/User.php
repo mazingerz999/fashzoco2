@@ -76,4 +76,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Producto::class);
     }
+    public function valoraciones()
+    {
+        return $this->hasMany(valoracion::class);
+    }
 }

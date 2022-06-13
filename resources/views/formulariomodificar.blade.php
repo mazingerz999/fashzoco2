@@ -1,11 +1,10 @@
 @extends('layouts.master')
 @section('content')
-<h1>Editar un Animal</h1>
 <div class="row">
     <div class="offset-md-3 col-md-6">
         <div class="card">
             <div class="card-header text-center">
-                <h2> Editar animal</h2>
+                <h2> Editar producto</h2>
             </div>
 
             <div class="card-body" style="padding:30px">
@@ -36,8 +35,8 @@
                     </div>
                     <div class="form-group">
                         <label for="sexo" >Elige la categoria</label>
-                        <select class="form-control" id="categoria"    name="categoria">
-                            @foreach ($categoriasRopa as $value)
+                        <select class="form-control" id="categoria" data-choices name="categoria"   name="categoria">
+                            @foreach ($todasCategorias as $value)
                             <option value="{{$value->id}}">{{$value->nombrecategoria}}</option>
                             @endforeach
                         </select>
@@ -60,6 +59,14 @@
                                         <option value="0">Masculino</option>
                                         <option value="1">Femenino</option>
                                 </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="envio" >Elige el envio</label>
+                        <select class="form-control" id="categoria" data-choices name="envio"   name="envio">
+                            @foreach ($todosenvios as $value)
+                            <option value="{{$value->id}}">{{$value->nombreCompania}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         {{-- TODO: Completa el input para la alimentación --}}

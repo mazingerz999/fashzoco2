@@ -19,14 +19,17 @@
                     </div>
                     <div class="flex-grow-1 ms-2">
                         <h5 class="card-title mb-1">{{$producto->marca}} <span> | </span> {{$producto->modelo}} </h5>
-                        <a href="#"><p class="text-muted mb-0">Vendedor: {{$producto->user->name}}</p></a>
+                        <a href="{{ route('formulariovaloracion') }}"><p class="text-muted mb-0">Vendedor: {{$producto->user->name}}</p></a>
                     </div>
                 </div>
-                <h6 class="mb-1">Precio: {{$prodMasculino[0]->precio}} €</h6>
-                <h6 class="mb-1">Año de fabricación: {{$prodMasculino[0]->fechaFabricacion}}</h6>
+                <h6 class="mb-1">Precio: {{$producto->precio}} €</h6>
+                <h6 class="mb-1">Año de fabricación: {{$producto->fechaFabricacion}}</h6>
                 <p class="card-text text-muted mb-1">Sexo: Masculino</p>
-                <p class="card-text text-muted">Cantidad: {{ $prodMasculino[0]->cantidad }}</p>
-                <a href="{{route('productoEnvio' , $producto)}}" class="btn btn-primary btn-sm">Comprar</a>
+                <p class="card-text text-muted">Cantidad: {{ $producto->cantidad }}</p>
+                @if (Auth::User()->escomprador==0)
+                <a href="{{route('productoEnvio' , $producto)}}" class=" btn btn-primary btn-sm ">Comprar</a>
+                @endif
+
             </div>
         </div>
         @endif

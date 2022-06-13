@@ -26,7 +26,7 @@
                                     <h4 class="card-link link-info">Precio: {{ $value->price->current->value }} <i
                                             class="ri-money-euro-circle-line"></i></h4>
                                     <hr>
-                                    <a href="{{$value->url}} " target="_blank"> <button type="button"
+                                    <a href="{{ 'http://www.asos.com/' . $value->url }}" target="_blank"> <button type="button"
                                             class="btn btn-success btn-label waves-effect right waves-light rounded-pill">
                                             <i
                                                 class=" ri-shopping-cart-2-line  label-icon align-middle rounded-pill fs-16 ms-2"></i>

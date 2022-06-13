@@ -44,7 +44,7 @@ class VentaController extends Controller
     public function insertDelete(Producto $item)
     {
          $date = date('Y-m-d');
-       $venta=new venta();
+         $venta=new venta();
          $venta->fechaVenta=$date;
          $venta->comprador_id=auth()->user()->id;
          $venta->user_id=$item->user_id;

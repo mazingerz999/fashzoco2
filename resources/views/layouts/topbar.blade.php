@@ -1,27 +1,27 @@
 <header id="page-topbar">
     <div class="layout-width">
         <div class="navbar-header m-0">
-
             <div class="d-flex">
                 <!-- LOGO -->
                 <div class="navbar-brand-box horizontal-logo">
                     <a href="{{ route('dashboard') }}" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> Fashzoco
-                        </span>
+                      <b><span class="logo-sm text-muted">
+                        <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="22">
+                    </span></b>
+                      <b><span class="logo-lg text-muted">
+                        <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> FashZoco
+                    </span></b>
                     </a>
 
                     <a href="{{ route('dashboard') }}" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> Fashzoco
-                        </span>
+                      <b><span class="logo-sm text-muted">
+                        <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="22">
+                    </span></b>
+                      <b> <span class="logo-lg text-muted">
+                        <img src="assets/images/proyecto/logoMiEmpresa.png" alt="" height="25"> FashZoco
+                    </span></b>
                     </a>
+
                 </div>
 
                 <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
@@ -34,107 +34,20 @@
                 </button>
 
                 <!-- App Search-->
-                <form class="app-search d-none d-md-block">
+                <form class="app-search d-none d-md-block" action="{{route('producto.busqueda')}}" method="POST">
+                    @csrf
                     <div class="position-relative">
-                        <input type="text" class="form-control" placeholder="Que buscas?"
-                            id="busqueda" value="">
+                        <input type="text" class="form-control" placeholder="Que buscas?..."
+                            id="buscador" name="buscador" >
                         <span class="mdi mdi-magnify search-widget-icon"></span>
-                        <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
-                            id="search-close-options"></span>
                     </div>
-
                 </form>
-                <!-- fin search -->
 
+                <!-- fin search -->
 
             </div>
 
             <div class="d-flex align-items-center">
-                {{-- <div class="dropdown d-md-none topbar-head-dropdown header-item">
-                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                        id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <i class="bx bx-search fs-22"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                        aria-labelledby="page-header-search-dropdown">
-                        <form class="p-3">
-                            <div class="form-group m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search ..."
-                                        aria-label="Recipient's username">
-                                    <button class="btn btn-primary" type="submit"><i
-                                            class="mdi mdi-magnify"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> --}}
-{{--
-                <div class="dropdown ms-1 topbar-head-dropdown header-item">
-                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="header-lang-img" src="assets/images/flags/us.svg" alt="Header Language" height="20"
-                            class="rounded">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language py-2" data-lang="en"
-                            title="English">
-                            <img src="assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="18">
-                            <span class="align-middle">English</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp"
-                            title="Spanish">
-                            <img src="assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
-                            <span class="align-middle">Española</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="gr"
-                            title="German">
-                            <img src="assets/images/flags/germany.svg" alt="user-image" class="me-2 rounded"
-                                height="18"> <span class="align-middle">Deutsche</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="it"
-                            title="Italian">
-                            <img src="assets/images/flags/italy.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
-                            <span class="align-middle">Italiana</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ru"
-                            title="Russian">
-                            <img src="assets/images/flags/russia.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
-                            <span class="align-middle">русский</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="ch"
-                            title="Chinese">
-                            <img src="assets/images/flags/china.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
-                            <span class="align-middle">中国人</span>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="fr"
-                            title="French">
-                            <img src="assets/images/flags/french.svg" alt="user-image" class="me-2 rounded"
-                                height="18">
-                            <span class="align-middle">français</span>
-                        </a>
-                    </div>
-                </div> --}}
-
                 <div class="dropdown topbar-head-dropdown ms-1 header-item">
                     <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Recomendaciones</span>
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
@@ -200,7 +113,7 @@
 
                     <button type="button"
                         class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle ">
-                        <i class='ri-file-list-3-line fs-22 text-primary'></i>
+                        <i class='ri-file-list-3-line fs-22 text-info'></i>
                     </button>
                 </a>
                 </div>
@@ -211,7 +124,7 @@
                     <a  href="{{route('mostrarproductos')}}">
                     <button type="button"
                         class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle ">
-                        <i class=' ri-archive-drawer-line fs-22 text-primary'></i>
+                        <i class=' ri-archive-drawer-line fs-22 text-info'></i>
                     </button>
                 </a>
                 </div>
@@ -239,7 +152,7 @@
                     <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Tiendas en tu zona</span>
                     <a  href="{{ route('mapaTiendas') }}">
                     <button type="button"
-                        class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                        class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                         <i class='ri-earth-line fs-22 text-success'></i>
                     </button>
                 </a>
@@ -279,10 +192,6 @@
                             <a class="dropdown-item" href="{{ route('panelUsuario') }}"><i
                                     class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i>
                                 <span class="align-middle">Mi Cuenta</span></a>
-
-                            <a class="dropdown-item" href=""><i
-                                    class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i>
-                                <span class="align-middle">Mis productos</span></a>
                             <!--  -->
                             <div class="dropdown-divider"></div>
                             <!--  -->
@@ -297,24 +206,5 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="row m-0">
-            <!-- links de hombres, mujeres y niños, aqui tengo que hacer un filtrado con los productos que hay segun el tipo -->
-            <div class="col-12">
-                <div class=" d-flex align-items-center justify-content-evenly">
-                    <a href="#">
-                        <h4 class="mb-sm-0 text-primary"><img
-                                src="{{ url('assets/images/proyecto/hombre.png') }}" /> HOMBRE </i></h4>
-                    </a>
-                    <a href="#">
-                        <h4 class="mb-sm-0 text-primary"><img
-                                src="{{ url('assets/images/proyecto/mujer.png') }}" /> MUJER</h4>
-                    </a>
-                    <a href="#">
-                        <h4 class="mb-sm-0 text-primary"><img
-                                src="{{ url('assets/images/proyecto/ninio.png') }}" /> NIÑO </h4>
-                    </a>
-                </div>
-            </div>
-        </div> --}}
     </div>
 </header>

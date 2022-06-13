@@ -1,12 +1,12 @@
 <!doctype html >
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-layout="horizontal" data-topbar="dark" data-sidebar="dark" data-sidebar-size="lg">
 
 <head>
     <meta charset="utf-8" />
     <title>@yield('title')Fashzoco | Vende tu ropa - Rapido y Seguro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+    <meta content="Vende tu ropa - Rapido y Seguro" name="description" />
+    <meta content="Alberto" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico')}}">
     @include('layouts.head-css')
@@ -31,7 +31,6 @@
             @include('layouts.footer')
         </div>
         <!-- end main content-->
-    </div>
     <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
         <i class="ri-arrow-up-line"></i>
     </button>

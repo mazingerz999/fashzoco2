@@ -25,6 +25,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'] )->name('
 //     Producto::where('id','=','2')->delete();
 
 // });
+//buscador
+Route::post('buscador', [\App\Http\Controllers\ProductoController::class, 'buscador'])->name('producto.busqueda');
 //tickets comprador
 Route::get('/mostrartickets', [\App\Http\Controllers\VentaController::class, 'mostrartickets'] )->name('mostrartickets');
 //productos comprador mostrar todos
@@ -32,8 +34,16 @@ Route::get('/mostrarproductos', [\App\Http\Controllers\ProductoController::class
 //formulario con la modificacion con el producto
  Route::get('/formulariomodificar/{producto}/edit', [\App\Http\Controllers\ProductoController::class, 'edit'] )->name('producto.edit');
  Route::put('productos/{producto}', [\App\Http\Controllers\ProductoController::class, 'update'])->name('producto.update');
-
+ //formulario para vender ropa
+ Route::get('venderopa', [\App\Http\Controllers\ProductoController::class, 'venderopa'])->name('venderopa');
+ Route::post('productos', [\App\Http\Controllers\ProductoController::class, 'store'])->name('producto.store');
+ //formulario para subir valoracion, la primera envia desde user productos
+ Route::get('formulariovaloracion', [\App\Http\Controllers\ValoracionController::class, 'formulariovaloracion'])->name('formulariovaloracion');
+ Route::post('valoraciones', [\App\Http\Controllers\ValoracionController::class, 'store'])->name('valoracion.store');
+ Route::get('listavaloraciones', [\App\Http\Controllers\ValoracionController::class, 'listavaloraciones'])->name('listavaloraciones');
+ //envios
 Route::get('/envios/{producto}', [\App\Http\Controllers\VentaController::class, 'productoEnvio'] )->name('productoEnvio');
+//categorias
 Route::get('/productosMasc/{categoria}', [\App\Http\Controllers\ProductoController::class, 'productosHombre'] )->name('productosMasc');
 Route::get('/productosFem/{categoria} ', [\App\Http\Controllers\ProductoController::class, 'productosMujer'] )->name('productosFem');
  Route::get('graciasCompra/{item}', [\App\Http\Controllers\VentaController::class, 'insertDelete'] )->name('insertDelete');
@@ -50,6 +60,14 @@ Route::middleware([
 });
 
 
+//RUTE TENDENCIAS
+Route::get('tendencias', function () {
+    return view('tendencias');
+})->name('tendencias');
+//RUTE SOBRE NOSOTROS
+Route::get('sobrenosotros', function () {
+    return view('sobrenosotros');
+})->name('sobrenosotros');
 //RUTE DE PANEL DE USUARIO
 Route::get('/profile', function () {
     return view('profile.show');
@@ -58,9 +76,6 @@ Route::get('/profile', function () {
 //APIS
 //api asos
 Route::get('/ropaASOS', function () {
-    // $ropa=Http::get('https://adidas7.p.rapidapi.com/products/reviews/G55366');
-    // $ropaArray=$ropa->json();
-    // //no olvides cambiar el index por la blade correspondiente
 $curl = curl_init();
 
 curl_setopt_array($curl, [

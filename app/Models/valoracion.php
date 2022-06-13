@@ -10,4 +10,9 @@ class valoracion extends Model
     use HasFactory;
     protected $table = "valoracions";
     protected $guarded = []; //con este array vale para evitar el error del token que viene de el campo de seguridad
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
